@@ -25,10 +25,6 @@
     ],
     "interface-over-type-literal": true,
     "label-position": true,
-    "max-line-length": [
-      true,
-      140
-    ],
     "member-access": false,
     "member-ordering": [
       true,
@@ -113,7 +109,8 @@
       "check-decl",
       "check-operator",
       "check-separator",
-      "check-type"
+      "check-type",
+      "check-module"
     ],
     "directive-selector": [
       true,
@@ -136,6 +133,8 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "invoke-injectable": true
+    "invoke-injectable": true,
+    "no-angle-bracket-type-assertion": true,
+    "no-unused-variable": true
   }
 }
