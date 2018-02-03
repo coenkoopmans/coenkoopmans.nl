@@ -1,0 +1,25 @@
+@import "app/variables";
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Roboto|Roboto+Slab:300,700');
+
+* {
+  box-sizing: border-box;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: $color-black;
+  font-family: $font-regular;
+  color: $color-white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headings;
+}
+
+pre {
+  font-family: $font-mono;
+}

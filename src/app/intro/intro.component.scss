@@ -1,5 +1,23 @@
-.name {
+@import '../variables.scss';
 
+$font-size-h1-small: 30px;
+$font-size-h1-big: 50px;
+
+.intro {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 300;
+  font-size: $font-size-h1-small;
+}
+.name--first, .name--last {
+  display: block; // Force new line by setting block-level rendering
+  font-weight: 700;
+  font-size: $font-size-h1-big;
 }
 .name--first {
 
@@ -8,16 +26,30 @@
 
 }
 .name--lastEmphasis {
-
+  color: $color-red;
 }
 
 .tagLine {
+  font-family: $font-mono;
 
 }
 .tagLine--emphasis {
-
+  font-style: normal;
+  color: $color-blue;
 }
 
 .scrollDownButton {
+  bottom: 10px;
+  width: 42px;
+  height: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.scrollDownButton--image {
+  width: inherit;
+  height: inherit;
+}
 
+.introBackground {
+  
 }
