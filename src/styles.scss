@@ -8,18 +8,28 @@
   margin: 0;
   padding: 0;
   border: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   background: $color-black;
   font-family: $font-regular;
   color: $color-white;
+  transform: scale(1, 1);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-headings;
 }
 
+em {
+  font-style: normal;
+}
+
 pre {
   font-family: $font-mono;
+}
+
+a:focus, button:focus {
+  outline-color: $color-blue;
 }

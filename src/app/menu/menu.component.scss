@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+$menuButtonPadding: 10px;
+
+.menuButton {
+  position: fixed;
+  right: 25px - $menuButtonPadding;
+  top: 45px - $menuButtonPadding;
+
+  padding: $menuButtonPadding;
+}

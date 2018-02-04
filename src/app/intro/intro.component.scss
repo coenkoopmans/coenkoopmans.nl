@@ -1,13 +1,18 @@
 @import '../variables.scss';
 
 $font-size-h1-small: 30px;
-$font-size-h1-big: 50px;
+$font-size-h1-big: 51px;
+$font-size-tagLine: 18px;
+
+$arrow-width: 42px;
+$arrow-height: 15px;
 
 .intro {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 39px 25px 0 25px;
 }
 
 .name {
@@ -18,12 +23,7 @@ $font-size-h1-big: 50px;
   display: block; // Force new line by setting block-level rendering
   font-weight: 700;
   font-size: $font-size-h1-big;
-}
-.name--first {
-
-}
-.name--last {
-
+  line-height: 55px;
 }
 .name--lastEmphasis {
   color: $color-red;
@@ -31,25 +31,29 @@ $font-size-h1-big: 50px;
 
 .tagLine {
   font-family: $font-mono;
-
+  font-size: $font-size-tagLine;
+  line-height: 35px;
+  margin-top: 40px;
 }
 .tagLine--emphasis {
-  font-style: normal;
   color: $color-blue;
 }
 
 .scrollDownButton {
+  position: fixed;
   bottom: 10px;
-  width: 42px;
-  height: 15px;
-  margin-left: auto;
-  margin-right: auto;
+  // Horizontally center
+  left: 50%;
+  transform: translateX(-50%);
 }
 .scrollDownButton--image {
-  width: inherit;
-  height: inherit;
+
 }
 
 .introBackground {
-  
+
+}
+
+.introBackground__hexagon--imageContainer {
+  background-image: url('/assets/coen-koopmans-picture.jpg');
 }
