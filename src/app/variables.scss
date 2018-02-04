@@ -12,3 +12,27 @@ $font-mono: 'Fira Mono', "Courier New", Courier, monospace;
 
 $font-size-regular: 18px;
 $font-size-heading: 45px;
+
+$scale-factor-tablet-desktop: 1.5;
+
+$padding-left-right-mobile: 25px;
+$padding-left-right-tablet: 40px;
+$padding-left-right-desktop: 0;
+
+$padding-top-mobile: 40px;
+$padding-top-tablet: 60px;
+$padding-top-desktop: 50px;
+
+$max-width-desktop: 1000px;
+
+@mixin breakpoint($name) {
+  @if $name == desktop {
+    @media (min-width: 1080px) { @content; }
+  }
+  @else if $name == tablet {
+    @media (min-width: 768px) { @content; }
+  }
+  @else {
+    @media (max-width: 767px) { @content; }
+  }
+}

@@ -1,11 +1,32 @@
 @import '../variables.scss';
 
-$menuButtonPadding: 10px;
+$menu-button-padding: 10px;
+
+$menu-button-width: 34px;
+$menu-button-height: 25px;
 
 .menuButton {
-  position: fixed;
-  right: 25px - $menuButtonPadding;
-  top: 45px - $menuButtonPadding;
+  box-sizing: content-box;
+  position: absolute;
+  right: $padding-left-right-mobile - $menu-button-padding;
+  top: $padding-top-mobile - $menu-button-padding;
 
-  padding: $menuButtonPadding;
+  padding: $menu-button-padding;
+
+  @include breakpoint('tablet') {
+    width: $menu-button-width * $scale-factor-tablet-desktop;
+    height: $menu-button-height * $scale-factor-tablet-desktop;
+
+    right: $padding-left-right-tablet - $menu-button-padding;
+    top: $padding-top-tablet - $menu-button-padding;
+  }
+  @include breakpoint('desktop') {
+    right: $padding-left-right-desktop - $menu-button-padding;
+    top: $padding-top-desktop - $menu-button-padding;
+  }
+}
+
+.menuButton--image {
+  width: inherit;
+  height: inherit;
 }
