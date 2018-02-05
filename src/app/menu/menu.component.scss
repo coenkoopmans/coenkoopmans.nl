@@ -3,26 +3,30 @@
 $menu-button-padding: 10px;
 
 $menu-button-width: 34px;
-$menu-button-height: 25px;
+$menu-button-height: 24px;
+
+$menu-button-top-mobile: 45px;
+$menu-button-top-tablet: 70px;
+$menu-button-top-desktop: 70px;
 
 .menuButton {
   box-sizing: content-box;
   position: absolute;
   right: $padding-left-right-mobile - $menu-button-padding;
-  top: $padding-top-mobile - $menu-button-padding;
+  top: $menu-button-top-mobile - $menu-button-padding;
 
   padding: $menu-button-padding;
 
   @include breakpoint('tablet') {
-    width: $menu-button-width * $scale-factor-tablet-desktop;
-    height: $menu-button-height * $scale-factor-tablet-desktop;
+    width: $menu-button-width * $scale-factor-tablet;
+    height: $menu-button-height * $scale-factor-tablet;
 
     right: $padding-left-right-tablet - $menu-button-padding;
-    top: $padding-top-tablet - $menu-button-padding;
+    top: $menu-button-top-tablet - $menu-button-padding;
   }
   @include breakpoint('desktop') {
     right: $padding-left-right-desktop - $menu-button-padding;
-    top: $padding-top-desktop - $menu-button-padding;
+    top: $menu-button-top-desktop - $menu-button-padding;
   }
 }
 

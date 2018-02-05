@@ -7,6 +7,8 @@ $font-size-tagLine: 18px;
 $scroll-button-width: 42px;
 $scroll-button-height: 15px;
 
+$name-first-last-line-height: 55px;
+
 .intro {
   width: 100%;
   height: 100vh;
@@ -25,12 +27,19 @@ $scroll-button-height: 15px;
 .name {
   font-weight: 300;
   font-size: $font-size-h1-small;
+  @include breakpoint('tablet') {
+    font-size: $font-size-h1-small * $scale-factor-tablet;
+  }
 }
 .name--first, .name--last {
   display: block; // Force new line by setting block-level rendering
   font-weight: 700;
   font-size: $font-size-h1-big;
-  line-height: 55px;
+  line-height: $name-first-last-line-height;
+  @include breakpoint('tablet') {
+    font-size: $font-size-h1-big * $scale-factor-tablet;
+    line-height: $name-first-last-line-height * $scale-factor-tablet;
+  }
 }
 .name--lastEmphasis {
   color: $color-red;
@@ -41,6 +50,9 @@ $scroll-button-height: 15px;
   font-size: $font-size-tagLine;
   line-height: 35px;
   margin-top: 40px;
+  @include breakpoint('tablet') {
+    font-size: $font-size-tagLine * $scale-factor-tablet;
+  }
 }
 .tagLine--emphasis {
   color: $color-blue;
@@ -56,8 +68,8 @@ $scroll-button-height: 15px;
   transform: translateX(-50%);
 
   @include breakpoint('tablet') {
-    width: $scroll-button-width * $scale-factor-tablet-desktop;
-    height: $scroll-button-height * $scale-factor-tablet-desktop;
+    width: $scroll-button-width * $scale-factor-tablet;
+    height: $scroll-button-height * $scale-factor-tablet;
   }
 }
 .scrollDownButton--image {
