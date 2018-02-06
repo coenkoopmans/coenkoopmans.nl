@@ -11,8 +11,11 @@ $name-first-last-line-height: 55px;
 
 $hexagon-width: 257px;
 $hexagon-height: 293px;
-
 $hexagon-margin: 12px;
+
+$hexagon-width-tablet: $hexagon-width * 1.6;
+$hexagon-height-tablet: $hexagon-height * 1.6;
+$hexagon-margin-tablet: $hexagon-margin * 1.6;
 
 .intro {
   width: 100%;
@@ -94,12 +97,22 @@ $hexagon-margin: 12px;
   width: $hexagon-width * 2 + $hexagon-margin;
   height: $hexagon-height * 1.8;
   overflow: hidden;
+
+  @include breakpoint('tablet') {
+    width: $hexagon-width-tablet * 2 + $hexagon-margin-tablet;
+    height: $hexagon-height-tablet * 1.8;
+  }
 }
 
 .introBackground__hexagon {
   width: $hexagon-width;
   height: $hexagon-height;
   position: absolute;
+
+  @include breakpoint('tablet') {
+    width: $hexagon-width-tablet;
+    height: $hexagon-height-tablet;
+  }
 }
 
 .introBackground__hexagon--fill {
@@ -107,6 +120,10 @@ $hexagon-margin: 12px;
   background-size: cover;
   bottom: 0;
   right: -$hexagon-width / 2;
+
+  @include breakpoint('tablet') {
+    right: -$hexagon-width-tablet / 2;
+  }
 }
 
 .introBackground__hexagon--outline {
@@ -115,6 +132,11 @@ $hexagon-margin: 12px;
   position: absolute;
   right: $hexagon-margin / 2;
   bottom: $hexagon-height * 0.79;
+
+  @include breakpoint('tablet') {
+    right: $hexagon-margin-tablet / 2;
+    bottom: $hexagon-height-tablet * 0.79;
+  }
 }
 
 /*
@@ -149,6 +171,13 @@ $hexagon-image-scale-factor: 0.5773502691896257;
 
   bottom: 0;
   right: ($hexagon-width / 2) + $hexagon-margin;
+
+  @include breakpoint('tablet') {
+    height: $hexagon-height-tablet / 2;
+    margin: ($hexagon-height-tablet / 4) 0;
+    background-size: auto $hexagon-height-tablet;
+    right: ($hexagon-width-tablet / 2) + $hexagon-margin-tablet;
+  }
 }
 
 .introBackground__hexagon--image:after {
@@ -160,6 +189,11 @@ $hexagon-image-scale-factor: 0.5773502691896257;
   height: $hexagon-height / 2;
   z-index: 2;
   background: inherit;
+
+  @include breakpoint('tablet') {
+    width: $hexagon-width-tablet;
+    height: $hexagon-height-tablet / 2;
+  }
 }
 
 .introBackground__hexagon--imageTop,
@@ -172,6 +206,12 @@ $hexagon-image-scale-factor: 0.5773502691896257;
   transform: scaleY($hexagon-image-scale-factor) rotate(-45deg);
   background: inherit;
   left: ($hexagon-width - getHexagonCapWidth($hexagon-width)) / 2;
+
+  @include breakpoint('tablet') {
+    width: getHexagonCapWidth($hexagon-width-tablet);
+    height: getHexagonCapWidth($hexagon-width-tablet);
+    left: ($hexagon-width-tablet - getHexagonCapWidth($hexagon-width-tablet)) / 2;
+  }
 }
 
 .introBackground__hexagon--imageTop:after,
@@ -183,10 +223,20 @@ $hexagon-image-scale-factor: 0.5773502691896257;
   transform: rotate(45deg) scaleY(1 / $hexagon-image-scale-factor) translateY(-$hexagon-height / 4);
   transform-origin: 0 0;
   background: inherit;
+
+  @include breakpoint('tablet') {
+    width: $hexagon-width-tablet;
+    height: $hexagon-height-tablet / 2;
+    transform: rotate(45deg) scaleY(1 / $hexagon-image-scale-factor) translateY(-$hexagon-height-tablet / 4);
+  }
 }
 
 .introBackground__hexagon--imageTop {
   top: -1 * getHexagonOffset($hexagon-width);
+
+  @include breakpoint('tablet') {
+    top: -1 * getHexagonOffset($hexagon-width-tablet);
+  }
 }
 
 .introBackground__hexagon--imageTop:after {
@@ -195,6 +245,10 @@ $hexagon-image-scale-factor: 0.5773502691896257;
 
 .introBackground__hexagon--imageBottom {
   bottom: -1 * getHexagonOffset($hexagon-width);
+
+  @include breakpoint('tablet') {
+    bottom: -1 * getHexagonOffset($hexagon-width-tablet);
+  }
 }
 
 .introBackground__hexagon--imageBottom:after {
