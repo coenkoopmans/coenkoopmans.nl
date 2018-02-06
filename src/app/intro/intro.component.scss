@@ -9,10 +9,10 @@ $scroll-button-height: 15px;
 
 $name-first-last-line-height: 55px;
 
-$hexagon-width: 214px;
-$hexagon-height: 244px;
+$hexagon-width: 257px;
+$hexagon-height: 293px;
 
-$hexagon-margin: 10px;
+$hexagon-margin: 12px;
 
 .intro {
   width: 100%;
@@ -89,7 +89,7 @@ $hexagon-margin: 10px;
 .introBackground {
   position: absolute;
   z-index: 1;
-  bottom: 40px;
+  top: 90px;
   right: 0;
   width: $hexagon-width * 2 + $hexagon-margin;
   height: $hexagon-height * 1.8;
@@ -104,12 +104,14 @@ $hexagon-margin: 10px;
 
 .introBackground__hexagon--fill {
   background: url('/assets/ui/hexagon-fill.svg');
+  background-size: cover;
   bottom: 0;
   right: -$hexagon-width / 2;
 }
 
 .introBackground__hexagon--outline {
   background: url('/assets/ui/hexagon-outline.svg');
+  background-size: cover;
   position: absolute;
   right: $hexagon-margin / 2;
   bottom: $hexagon-height * 0.79;
