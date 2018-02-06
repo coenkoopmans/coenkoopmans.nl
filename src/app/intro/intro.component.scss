@@ -89,6 +89,14 @@ $hexagon-height: 244px;
   height: $hexagon-height;
 }
 
+.introBackground__hexagon--fill {
+  background: url('/assets/ui/hexagon-fill.svg');
+}
+
+.introBackground__hexagon--outline {
+  background: url('/assets/ui/hexagon-outline.svg');
+}
+
 /*
 
   Image hexagon below, beware - lots of maths and hacky stuff to follow, but it seemed like the best solution
@@ -115,7 +123,6 @@ $hexagon-image-scale-factor: 0.5773502691896257;
 
 .introBackground__hexagon--image {
   position: relative;
-  width: $hexagon-width;
   height: $hexagon-height / 2;
   margin: ($hexagon-height / 4) 0;
   background: url('/assets/coen-koopmans-picture.jpg') center;
