@@ -9,6 +9,9 @@ $scroll-button-height: 15px;
 
 $name-first-last-line-height: 55px;
 
+$hexagon-width: 214px;
+$hexagon-height: 244px;
+
 .intro {
   width: 100%;
   height: 100vh;
@@ -81,6 +84,83 @@ $name-first-last-line-height: 55px;
 
 }
 
+.introBackground__hexagon {
+  width: $hexagon-width;
+  height: $hexagon-height;
+}
+
+/*
 .introBackground__hexagon--imageContainer {
   background-image: url('/assets/coen-koopmans-picture.jpg');
+  background-size: cover;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+*/
+
+
+.introBackground__hexagon--image {
+  position: relative;
+  width: 214px;
+  height: 123.55px;
+  margin: 61.78px 0;
+  background-image: url('/assets/coen-koopmans-picture.jpg');
+  background-size: auto 247.1059px;
+  background-position: center;
+}
+
+.introBackground__hexagon--image:after {
+  content: "";
+  position: absolute;
+  top: 0.0000px;
+  left: 0;
+  width: 214.0000px;
+  height: 123.5530px;
+  z-index: 2;
+  background: inherit;
+}
+
+.introBackground__hexagon--imageTop,
+.introBackground__hexagon--imageBottom {
+  position: absolute;
+  z-index: 1;
+  width: 151.32px;
+  height: 151.32px;
+  overflow: hidden;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 31.34px;
+}
+
+/*counter transform the bg image on the caps*/
+.introBackground__hexagon--imageTop:after,
+.introBackground__hexagon--imageBottom:after {
+  content: "";
+  position: absolute;
+  width: 214.0000px;
+  height: 123.55295760657992px;
+  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-61.7765px);
+  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-61.7765px);
+  transform:          rotate(45deg) scaleY(1.7321) translateY(-61.7765px);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: inherit;
+}
+
+.introBackground__hexagon--imageTop {
+  top: -75.6604px;
+}
+
+.introBackground__hexagon--imageTop:after {
+  background-position: center top;
+}
+
+.introBackground__hexagon--imageBottom {
+  bottom: -75.6604px;
+}
+
+.introBackground__hexagon--imageBottom:after {
+  background-position: center bottom;
 }
