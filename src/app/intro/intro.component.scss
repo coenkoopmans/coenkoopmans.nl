@@ -12,6 +12,8 @@ $name-first-last-line-height: 55px;
 $hexagon-width: 214px;
 $hexagon-height: 244px;
 
+$hexagon-margin: 10px;
+
 .intro {
   width: 100%;
   height: 100vh;
@@ -30,6 +32,7 @@ $hexagon-height: 244px;
 .name {
   font-weight: 300;
   font-size: $font-size-h1-small;
+  z-index: 2;
   @include breakpoint('tablet') {
     font-size: $font-size-h1-small * $scale-factor-tablet;
   }
@@ -51,8 +54,10 @@ $hexagon-height: 244px;
 .tagLine {
   font-family: $font-mono;
   font-size: $font-size-tagLine;
+  font-weight: 400;
   line-height: 35px;
   margin-top: 40px;
+  z-index: 2;
   @include breakpoint('tablet') {
     font-size: $font-size-tagLine * $scale-factor-tablet;
   }
@@ -69,6 +74,7 @@ $hexagon-height: 244px;
   // Horizontally center
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1337;
 
   @include breakpoint('tablet') {
     width: $scroll-button-width * $scale-factor-tablet;
@@ -81,20 +87,32 @@ $hexagon-height: 244px;
 }
 
 .introBackground {
-
+  position: absolute;
+  z-index: 1;
+  bottom: 40px;
+  right: 0;
+  width: $hexagon-width * 2 + $hexagon-margin;
+  height: $hexagon-height * 1.8;
+  overflow: hidden;
 }
 
 .introBackground__hexagon {
   width: $hexagon-width;
   height: $hexagon-height;
+  position: absolute;
 }
 
 .introBackground__hexagon--fill {
   background: url('/assets/ui/hexagon-fill.svg');
+  bottom: 0;
+  right: -$hexagon-width / 2;
 }
 
 .introBackground__hexagon--outline {
   background: url('/assets/ui/hexagon-outline.svg');
+  position: absolute;
+  right: $hexagon-margin / 2;
+  bottom: $hexagon-height * 0.79;
 }
 
 /*
@@ -122,11 +140,13 @@ $hexagon-image-scale-factor: 0.5773502691896257;
 }
 
 .introBackground__hexagon--image {
-  position: relative;
   height: $hexagon-height / 2;
   margin: ($hexagon-height / 4) 0;
   background: url('/assets/coen-koopmans-picture.jpg') center;
   background-size: auto $hexagon-height;
+
+  bottom: 0;
+  right: ($hexagon-width / 2) + $hexagon-margin;
 }
 
 .introBackground__hexagon--image:after {
