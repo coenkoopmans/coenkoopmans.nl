@@ -116,7 +116,7 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
 }
 
 .introBackground__hexagon--fill {
-  background: url('assets/ui/hexagon-fill.svg');
+  background: url('/assets/ui/hexagon-fill.svg');
   background-size: cover;
   bottom: 0;
   right: -$hexagon-width / 2;
@@ -127,7 +127,7 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
 }
 
 .introBackground__hexagon--outline {
-  background: url('assets/ui/hexagon-outline.svg');
+  background: url('/assets/ui/hexagon-outline.svg');
   background-size: cover;
   position: absolute;
   right: $hexagon-margin / 2;
@@ -166,7 +166,7 @@ $hexagon-image-scale-factor: 0.5773502691896257;
 .introBackground__hexagon--image {
   height: $hexagon-height / 2;
   margin: ($hexagon-height / 4) 0;
-  background: url('assets/coen-koopmans-picture.jpg') center;
+  background: url('/assets/coen-koopmans-picture.jpg') center;
   background-size: auto $hexagon-height;
 
   bottom: 0;
