@@ -81,6 +81,7 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1337;
+  @include drop-shadow();
 
   @include breakpoint('tablet') {
     width: $scroll-button-width * $scale-factor-tablet;

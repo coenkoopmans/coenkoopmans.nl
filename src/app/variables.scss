@@ -26,6 +26,10 @@ $padding-top-desktop: 50px;
 
 $max-width-desktop: 1000px;
 
+@mixin drop-shadow() {
+  filter: drop-shadow(1px 1px 2px $color-black);
+}
+
 @mixin breakpoint($name) {
   @if $name == desktop {
     @media (min-width: 1080px) { @content; }
