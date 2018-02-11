@@ -64,6 +64,9 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   @include breakpoint('tablet') {
     font-size: $font-size-tagLine * $scale-factor-tablet;
   }
+  @include breakpoint('desktop') {
+    width: 50%;
+  }
 }
 .tagLine--emphasis {
   color: $color-blue;
@@ -90,9 +93,9 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
 }
 
 .introBackground {
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  top: 90px;
+  bottom: 0;
   right: 0;
   width: $hexagon-width * 2 + $hexagon-margin;
   height: $hexagon-height * 1.8;
