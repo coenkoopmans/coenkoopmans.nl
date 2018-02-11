@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/coenkoopmans/coenkoopmans.nl.svg?branch=develop)](https://travis-ci.org/coenkoopmans/coenkoopmans.nl)
+
 # coenkoopmans.nl
 This is my personal website. I've decided to make this code public so people who are interested can see how it was made.
 
