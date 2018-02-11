@@ -32,6 +32,10 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   }
 }
 
+.name, .tagLine {
+  @include text-shadow;
+}
+
 .name {
   font-weight: 300;
   font-size: $font-size-h1-small;
@@ -112,6 +116,8 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   width: $hexagon-width;
   height: $hexagon-height;
   position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @include breakpoint('tablet') {
     width: $hexagon-width-tablet;
@@ -120,8 +126,7 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
 }
 
 .introBackground__hexagon--fill {
-  background: url('/assets/ui/hexagon-fill.svg');
-  background-size: cover;
+  background-image: url('/assets/ui/hexagon-fill.svg');
   bottom: 0;
   right: -$hexagon-width / 2;
 
@@ -131,9 +136,7 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
 }
 
 .introBackground__hexagon--outline {
-  background: url('/assets/ui/hexagon-outline.svg');
-  background-size: cover;
-  position: absolute;
+  background-image: url('/assets/ui/hexagon-outline.svg');
   right: $hexagon-margin / 2;
   bottom: $hexagon-height * 0.79;
 
@@ -143,118 +146,12 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   }
 }
 
-/*
-
-  Image hexagon below, beware - lots of maths and hacky stuff to follow, but it seemed like the best solution
-  given the alternatives:
-  - clip-path, which has little browser support
-  - A full sized (retina included) png, which would be ~900k for just this image
-
- The logic for the solution below was pretty much ripped from:
- http://csshexagon.com/
-
-*/
-
-// tan(30deg) is magic scale factor for fitting a square into a rhombus that fits the top of a hexagon
-// Math.tan(30 * Math.PI/180) evaluated in Javascript is pasted in as a value
-$hexagon-image-scale-factor: 0.5773502691896257;
-
-@function getHexagonCapWidth($width) {
-  @return $width / sqrt(2);
-}
-
-@function getHexagonOffset($width) {
-  @return $width / sqrt(2) / 2;
-}
-
 .introBackground__hexagon--image {
-  height: $hexagon-height / 2;
-  margin: ($hexagon-height / 4) 0;
-  background: url('/assets/coen-koopmans-picture.jpg') center;
-  background-size: auto $hexagon-height;
-
+  background-image: url('/assets/coen-koopmans-picture.png');
   bottom: 0;
   right: ($hexagon-width / 2) + $hexagon-margin;
 
   @include breakpoint('tablet') {
-    height: $hexagon-height-tablet / 2;
-    margin: ($hexagon-height-tablet / 4) 0;
-    background-size: auto $hexagon-height-tablet;
     right: ($hexagon-width-tablet / 2) + $hexagon-margin-tablet;
   }
-}
-
-.introBackground__hexagon--image:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: $hexagon-width;
-  height: $hexagon-height / 2;
-  z-index: 2;
-  background: inherit;
-
-  @include breakpoint('tablet') {
-    width: $hexagon-width-tablet;
-    height: $hexagon-height-tablet / 2;
-  }
-}
-
-.introBackground__hexagon--imageTop,
-.introBackground__hexagon--imageBottom {
-  position: absolute;
-  z-index: 1;
-  width: getHexagonCapWidth($hexagon-width);
-  height: getHexagonCapWidth($hexagon-width);
-  overflow: hidden;
-  transform: scaleY($hexagon-image-scale-factor) rotate(-45deg);
-  background: inherit;
-  left: ($hexagon-width - getHexagonCapWidth($hexagon-width)) / 2;
-
-  @include breakpoint('tablet') {
-    width: getHexagonCapWidth($hexagon-width-tablet);
-    height: getHexagonCapWidth($hexagon-width-tablet);
-    left: ($hexagon-width-tablet - getHexagonCapWidth($hexagon-width-tablet)) / 2;
-  }
-}
-
-.introBackground__hexagon--imageTop:after,
-.introBackground__hexagon--imageBottom:after {
-  content: "";
-  position: absolute;
-  width: $hexagon-width;
-  height: $hexagon-height / 2;
-  transform: rotate(45deg) scaleY(1 / $hexagon-image-scale-factor) translateY(-$hexagon-height / 4);
-  transform-origin: 0 0;
-  background: inherit;
-
-  @include breakpoint('tablet') {
-    width: $hexagon-width-tablet;
-    height: $hexagon-height-tablet / 2;
-    transform: rotate(45deg) scaleY(1 / $hexagon-image-scale-factor) translateY(-$hexagon-height-tablet / 4);
-  }
-}
-
-.introBackground__hexagon--imageTop {
-  top: -1 * getHexagonOffset($hexagon-width);
-
-  @include breakpoint('tablet') {
-    top: -1 * getHexagonOffset($hexagon-width-tablet);
-  }
-}
-
-.introBackground__hexagon--imageTop:after {
-  background-position: center top;
-}
-
-.introBackground__hexagon--imageBottom {
-  bottom: -1 * getHexagonOffset($hexagon-width);
-
-  @include breakpoint('tablet') {
-    bottom: -1 * getHexagonOffset($hexagon-width-tablet);
-  }
-}
-
-.introBackground__hexagon--imageBottom:after {
-  background-position: center bottom;
 }

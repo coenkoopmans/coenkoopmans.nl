@@ -26,8 +26,14 @@ $padding-top-desktop: 50px;
 
 $max-width-desktop: 1000px;
 
+$shadow-main: 1px 1px 2px rgba($color-black, 0.8);
+
 @mixin drop-shadow() {
-  filter: drop-shadow(1px 1px 2px $color-black);
+  filter: drop-shadow($shadow-main);
+}
+
+@mixin text-shadow() {
+  text-shadow: $shadow-main;
 }
 
 @mixin breakpoint($name) {
@@ -40,18 +46,4 @@ $max-width-desktop: 1000px;
   @else {
     @media (max-width: 767px) { @content; }
   }
-}
-
-// Square root SCSS function
-// http://www.antimath.info/css/sass-sqrt-function/
-@function sqrt($r) {
-  $x0: 1;
-  $x1: $x0;
-
-  @for $i from 1 through 10 {
-    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
-    $x0: $x1;
-  }
-
-  @return $x1;
 }
