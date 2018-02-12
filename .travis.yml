@@ -29,7 +29,7 @@ script:
   - ng e2e
   - npm run build
 after_success:
-  - deploy.sh
+  - ./deploy.sh
 
 notifications:
   webhooks:
