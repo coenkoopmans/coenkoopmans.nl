@@ -5,18 +5,9 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getBrokenImagesCount() {
-    return browser.executeAsyncScript((callback) => {
-      // This is an HTML Collection, not an array, can't do reduce on it without transforming
-      const imgs = document.getElementsByTagName('img');
-      let loaded = 0;
-      for (let i = 0; i < imgs.length; i++) {
-        if (imgs[i].naturalWidth > 0) {
-          loaded++;
-        }
-      }
-      callback(imgs.length - loaded);
-    });
+  getBrokenImagesCount(callback) {
+    return [].slice.call(document.getElementsByTagName('img'))
+      .reduce((count, img) => img.naturalWidth <= 0 ? count += 1 : count, 0);
   }
 
   getPageTitle() {
