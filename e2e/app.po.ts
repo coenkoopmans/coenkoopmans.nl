@@ -15,7 +15,7 @@ export class AppPage {
         }
       }
       callback(imgs.length - loaded);
-    }).then(function (brokenImagesCount) {
+    }).then((brokenImagesCount) => {
       expect(brokenImagesCount).toBe(0);
     });
   }
