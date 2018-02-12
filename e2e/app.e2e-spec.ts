@@ -8,8 +8,8 @@ describe('Generic app parts', () => {
     page.navigateTo();
   });
 
-  it('should find all images', function () {
-    page.checkBrokenImages();
+  it('should find all images', () => {
+    expect(page.getBrokenImagesCount()).toBe(0);
   });
 
 });
@@ -22,22 +22,11 @@ describe('Intro component', () => {
     page.navigateTo();
   });
 
-  it('should display the page title', () => {
-    const pageTitle = page.getPageTitle();
-    expect(pageTitle).toContain('Ik ben');
-    expect(pageTitle).toContain('Coen');
-    expect(pageTitle).toContain('Koopmans');
-    expect(pageTitle).toContain('.');
-  });
+  it('should display the page title', () =>
+    expect(page.getPageTitle()).toEqual('Ik ben\nCoen\nKoopmans.'));
 
   it('should display the tag line', () => {
-    const tagLineText = page.getTagLine();
-    expect(tagLineText).toEqual('Front-end developer met passie voor schone code.');
-  });
-
-  it('should display the tag line', () => {
-    const tagLineText = page.getTagLine();
-    expect(tagLineText).toEqual('Front-end developer met passie voor schone code.');
+    expect(page.getTagLine()).toEqual('Front-end developer met passie voor schone code.');
   });
 });
 
@@ -50,7 +39,6 @@ describe('Menu component', () => {
   });
 
   it('should display the menu button', () => {
-    const menuButton = page.getMenuButton();
-    expect(menuButton.isPresent()).toBeTruthy();
+    expect(page.getMenuButton()).toBeTruthy();
   });
 });
