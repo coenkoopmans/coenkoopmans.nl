@@ -6,7 +6,7 @@ export class AppPage {
   }
 
   checkBrokenImages() {
-    browser.executeAsyncScript(function (callback) {
+    const brokenImagesCount = browser.executeAsyncScript(function (callback) {
       const imgs = document.getElementsByTagName('img');
       let loaded = 0;
       for (let i = 0; i < imgs.length; i++) {
@@ -15,9 +15,8 @@ export class AppPage {
         }
       }
       callback(imgs.length - loaded);
-    }).then((brokenImagesCount) => {
-      expect(brokenImagesCount).toBe(0);
     });
+    expect(brokenImagesCount).toBe(0);
   }
 
   getPageTitle() {
