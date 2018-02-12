@@ -17,6 +17,7 @@ branches:
 cache:
   directories:
     - node_modules
+    - $(npm config get prefix)/bin/ng
 before_install:
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
