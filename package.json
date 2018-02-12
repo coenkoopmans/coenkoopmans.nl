@@ -5,11 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href \"http://www.coenkoopmans.nl/\" && echo \"www.coenkoopmans.nl\" > dist/CNAME && angular-cli-ghpages --branch master --no-silent"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
