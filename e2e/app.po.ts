@@ -5,9 +5,10 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getBrokenImagesCount(callback) {
-    return [].slice.call(document.getElementsByTagName('img'))
-      .reduce((count, img) => img.naturalWidth <= 0 ? count += 1 : count, 0);
+  getBrokenImagesCount() {
+    return browser.executeScript(() =>
+      [].slice.call(document.getElementsByTagName('img'))
+        .reduce((count, img) => img.naturalWidth <= 0 ? count += 1 : count, 0));
   }
 
   getPageTitle() {
