@@ -11,11 +11,6 @@ addons:
     - google-chrome
     packages:
     - google-chrome-stable
-cache:
-  yarn: true
-  directories:
-    - $HOME/.yarn-cache
-    - node_modules
 branches:
   only:
   - develop
@@ -23,17 +18,13 @@ before_install:
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  # Repo for Yarn
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
-  - export PATH=$HOME/.yarn/bin:$PATH
-  - yarn global add @angular/cli
+  - npm install @angular/cli -g
 install:
-  - yarn install
+  - npm install
 script:
   - ng test --watch false
   - ng e2e
-after_success:
-    "npm run deploy"
+  - npm run deploy
 
 notifications:
   webhooks:

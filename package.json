@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href \"http://www.coenkoopmans.nl/\" && angular-cli-ghpages --branch master"
+    "deploy": "ng build --prod --base-href \"http://www.coenkoopmans.nl/\" && echo \"www.coenkoopmans.nl\" > dist/CNAME && angular-cli-ghpages --branch master --no-silent"
   },
   "private": true,
   "dependencies": {
