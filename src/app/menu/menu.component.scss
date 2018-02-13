@@ -26,6 +26,9 @@ $menu-button-top-desktop: 70px;
     top: $menu-button-top-tablet - $menu-button-padding;
   }
   @include breakpoint('desktop') {
+    width: $menu-button-width * $scale-factor-desktop;
+    height: $menu-button-height * $scale-factor-desktop;
+
     right: $padding-left-right-desktop - $menu-button-padding;
     top: $menu-button-top-desktop - $menu-button-padding;
   }

@@ -1,14 +1,19 @@
 @import '../variables.scss';
 
-$font-size-h1-small: 30px;
-$font-size-h1-big: 51px;
-$font-size-tagLine: 18px;
+// Divide pixel amount from design by 320, the smallest denominator screen width, multiply by 100 to get a percentage
+// Sass doesn't seem to like calculations here...
+$font-size-h1-small: 9.375vw; // 30px
+$font-size-h1-big: 15.9375vw; // 51px
+$font-size-tagLine: 5.625vw; // 18px
+
+$name-first-last-line-height: 17.1875vw;
+$tagLine-line-height: 10.9375vw;
+
+$font-size-textContainer-scale-factor-tablet: 0.625;
 
 $scroll-button-width: 42px;
 $scroll-button-height: 15px;
 $scroll-button-padding: 10px;
-
-$name-first-last-line-height: 55px;
 
 $hexagon-width: 257px;
 $hexagon-height: 293px;
@@ -18,31 +23,43 @@ $hexagon-width-tablet: $hexagon-width * 1.6;
 $hexagon-height-tablet: $hexagon-height * 1.6;
 $hexagon-margin-tablet: $hexagon-margin * 1.6;
 
+$low-height-scale-factor: 0.6;
+
 .intro {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: 39px 25px 0 25px;
 
   @include breakpoint('tablet') {
-    padding: 60px 40px 0 40px;
+    padding: 7.8125vw 5.2083vw 0 5.2083vw;
   }
+
   @include breakpoint('desktop') {
-    padding: 74px 0 0 0;
+    padding: 5.1389vw 3.472vw 0 3.472vw;
+  }
+}
+
+.textContainer {
+  @include breakpoint('low-height') {
+    zoom: $low-height-scale-factor;
   }
 }
 
 .name, .tagLine {
-  @include text-shadow;
+  position: relative;
+  z-index: 2;
 }
 
 .name {
   font-weight: 300;
   font-size: $font-size-h1-small;
   z-index: 2;
+  @include text-shadow(rgba($color-black, 0.8));
   @include breakpoint('tablet') {
-    font-size: $font-size-h1-small * $scale-factor-tablet;
+    font-size: $font-size-h1-small * $font-size-textContainer-scale-factor-tablet;
   }
 }
 .name--first, .name--last {
@@ -51,8 +68,8 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   font-size: $font-size-h1-big;
   line-height: $name-first-last-line-height;
   @include breakpoint('tablet') {
-    font-size: $font-size-h1-big * $scale-factor-tablet;
-    line-height: $name-first-last-line-height * $scale-factor-tablet;
+    font-size: $font-size-h1-big * $font-size-textContainer-scale-factor-tablet;
+    line-height: $name-first-last-line-height * $font-size-textContainer-scale-factor-tablet;
   }
 }
 .name--lastEmphasis {
@@ -63,14 +80,13 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   font-family: $font-mono;
   font-size: $font-size-tagLine;
   font-weight: 400;
-  line-height: 35px;
+  line-height: $tagLine-line-height;
   margin-top: 40px;
   z-index: 2;
+  @include text-shadow($color-black);
   @include breakpoint('tablet') {
-    font-size: $font-size-tagLine * $scale-factor-tablet;
-  }
-  @include breakpoint('desktop') {
-    width: 50%;
+    font-size: $font-size-tagLine * $font-size-textContainer-scale-factor-tablet;
+    line-height: $tagLine-line-height * $font-size-textContainer-scale-factor-tablet;
   }
 }
 .tagLine--emphasis {
@@ -91,6 +107,12 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   @include breakpoint('tablet') {
     width: $scroll-button-width * $scale-factor-tablet;
     height: $scroll-button-height * $scale-factor-tablet;
+    padding: $scroll-button-padding * $scale-factor-tablet;
+  }
+  @include breakpoint('desktop') {
+    width: $scroll-button-width * $scale-factor-desktop;
+    height: $scroll-button-height * $scale-factor-desktop;
+    padding: $scroll-button-padding * $scale-factor-desktop;
   }
 }
 .scrollDownButton--image {
@@ -110,6 +132,9 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   @include breakpoint('tablet') {
     width: $hexagon-width-tablet * 1.5 + $hexagon-margin-tablet;
     height: $hexagon-height-tablet * 1.8;
+  }
+  @include breakpoint('low-height') {
+    zoom: $low-height-scale-factor;
   }
 }
 

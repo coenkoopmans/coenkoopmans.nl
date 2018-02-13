@@ -16,24 +16,29 @@ $font-size-heading: 45px;
 $scale-factor-tablet: 1.5;
 $scale-factor-desktop: 1.9;
 
+$browser-context-em: 16; // 16px = 1em by default
+
 $padding-left-right-mobile: 25px;
 $padding-left-right-tablet: 40px;
-$padding-left-right-desktop: 0;
+$padding-left-right-desktop: 50px;
 
 $padding-top-mobile: 40px;
 $padding-top-tablet: 60px;
 $padding-top-desktop: 50px;
 
-$max-width-desktop: 1000px;
+$shadow-main: 1px 1px 1px $color-black;
+$shadow-white: 1px 1px 1px $color-white;
 
-$shadow-main: 1px 1px 2px rgba($color-black, 0.8);
+@function emFromPx($pixels, $context: $browser-context-em) {
+  @return #{$pixels/$context}em;
+}
 
 @mixin drop-shadow() {
   filter: drop-shadow($shadow-main);
 }
 
-@mixin text-shadow() {
-  text-shadow: $shadow-main;
+@mixin text-shadow($color) {
+  text-shadow: emFromPx(1) emFromPx(1) 0 $color;
 }
 
 @mixin breakpoint($name) {
@@ -43,7 +48,11 @@ $shadow-main: 1px 1px 2px rgba($color-black, 0.8);
   @else if $name == tablet {
     @media (min-width: 768px) { @content; }
   }
+  @else if $name == low-height {
+    @media (max-height: 600px) { @content; }
+  }
   @else {
+    // Mobile
     @media (max-width: 767px) { @content; }
   }
 }
