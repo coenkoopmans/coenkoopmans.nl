@@ -10,6 +10,7 @@ $name-first-last-line-height: 17.1875vw;
 $tagLine-line-height: 10.9375vw;
 
 $font-size-textContainer-scale-factor-tablet: 0.625;
+$font-size-textContainer-scale-factor-desktop: 0.417;
 
 $scroll-button-width: 42px;
 $scroll-button-height: 15px;
@@ -61,6 +62,9 @@ $low-height-scale-factor: 0.6;
   @include breakpoint('tablet') {
     font-size: $font-size-h1-small * $font-size-textContainer-scale-factor-tablet;
   }
+  @include breakpoint('desktop') {
+    font-size: $font-size-h1-small * $font-size-textContainer-scale-factor-desktop;
+  }
 }
 .name--first, .name--last {
   display: block; // Force new line by setting block-level rendering
@@ -70,6 +74,10 @@ $low-height-scale-factor: 0.6;
   @include breakpoint('tablet') {
     font-size: $font-size-h1-big * $font-size-textContainer-scale-factor-tablet;
     line-height: $name-first-last-line-height * $font-size-textContainer-scale-factor-tablet;
+  }
+  @include breakpoint('desktop') {
+    font-size: $font-size-h1-big * $font-size-textContainer-scale-factor-desktop;
+    line-height: $name-first-last-line-height * $font-size-textContainer-scale-factor-desktop;
   }
 }
 .name--lastEmphasis {
@@ -87,6 +95,10 @@ $low-height-scale-factor: 0.6;
   @include breakpoint('tablet') {
     font-size: $font-size-tagLine * $font-size-textContainer-scale-factor-tablet;
     line-height: $tagLine-line-height * $font-size-textContainer-scale-factor-tablet;
+  }
+  @include breakpoint('desktop') {
+    font-size: $font-size-tagLine * $font-size-textContainer-scale-factor-desktop;
+    line-height: $tagLine-line-height * $font-size-textContainer-scale-factor-desktop;
   }
 }
 .tagLine--emphasis {
