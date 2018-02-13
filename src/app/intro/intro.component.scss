@@ -6,6 +6,7 @@ $font-size-tagLine: 18px;
 
 $scroll-button-width: 42px;
 $scroll-button-height: 15px;
+$scroll-button-padding: 10px;
 
 $name-first-last-line-height: 55px;
 
@@ -77,13 +78,13 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
 }
 
 .scrollDownButton {
+  box-sizing: content-box;
   width: $scroll-button-width;
   height: $scroll-button-height;
   position: fixed;
-  bottom: 10px;
-  // Horizontally center
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
+  padding: $scroll-button-padding;
+  align-self: center;
   z-index: 1337;
   @include drop-shadow();
 
