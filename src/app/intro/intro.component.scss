@@ -103,12 +103,12 @@ $hexagon-margin-tablet: $hexagon-margin * 1.6;
   z-index: 1;
   bottom: 0;
   right: 0;
-  width: $hexagon-width * 2 + $hexagon-margin;
+  width: $hexagon-width * 1.5 + $hexagon-margin;
   height: $hexagon-height * 1.8;
   overflow: hidden;
 
   @include breakpoint('tablet') {
-    width: $hexagon-width-tablet * 2 + $hexagon-margin-tablet;
+    width: $hexagon-width-tablet * 1.5 + $hexagon-margin-tablet;
     height: $hexagon-height-tablet * 1.8;
   }
 }
