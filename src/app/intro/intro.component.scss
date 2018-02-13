@@ -9,6 +9,8 @@ $font-size-tagLine: 5.625vw; // 18px
 $name-first-last-line-height: 17.1875vw;
 $tagLine-line-height: 10.9375vw;
 
+// These are calculated as follows: ($targetSize/$targetScreenWidth)/($mobileSize/$mobileScreenWidth) in the designs,
+// where "size" can refer to any element that scales according to $scale-factor-{screenSize}
 $font-size-textContainer-scale-factor-tablet: 0.625;
 $font-size-textContainer-scale-factor-desktop: 0.417;
 
