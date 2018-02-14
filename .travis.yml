@@ -30,7 +30,7 @@ script:
   - ng e2e
   - npm run build
 after_success:
-  - 'if [ $TRAVIS_PULL_REQUEST != false ]; then bash ./deploy.sh; fi'
+  - 'test $TRAVIS_PULL_REQUEST = false && bash ./deploy.sh'
 
 notifications:
   webhooks:
