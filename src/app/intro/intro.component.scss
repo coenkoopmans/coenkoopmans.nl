@@ -169,6 +169,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   background-image: url('/assets/ui/hexagon-fill.svg');
   bottom: 0;
   right: getVw(-($hexagon-width) / 2);
+  @include jiggle;
 
   @include breakpoint('tablet') {
     right: getVw(-($hexagon-width-tablet) / 2);
@@ -183,6 +184,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   background-image: url('/assets/ui/hexagon-outline.svg');
   right: getVw($hexagon-margin / 2);
   bottom: getVw($hexagon-height * 0.79);
+  @include jiggle;
 
   @include breakpoint('tablet') {
     right: getVw($hexagon-margin-tablet / 2);
@@ -198,6 +200,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   background-image: url('/assets/coen-koopmans-picture.png');
   bottom: 0;
   right: getVw(($hexagon-width / 2) + $hexagon-margin);
+  @include jiggle;
 
   @include breakpoint('tablet') {
     right: getVw(($hexagon-width-tablet / 2) + $hexagon-margin-tablet);
