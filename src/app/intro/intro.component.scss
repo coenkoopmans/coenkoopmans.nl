@@ -11,13 +11,17 @@ $scroll-button-width: getVwSizeForScreenWidth(42, 'mobile');
 $scroll-button-height: getVwSizeForScreenWidth(15, 'mobile');
 $scroll-button-padding: 10px;
 
-$hexagon-width: 257px;
-$hexagon-height: 293px;
-$hexagon-margin: 12px;
+$hexagon-width: getVwSizeForScreenWidth(214, 'mobile');
+$hexagon-height: getVwSizeForScreenWidth(244, 'mobile');
+$hexagon-margin: getVwSizeForScreenWidth(12, 'mobile');
 
-$hexagon-width-tablet: $hexagon-width * 1.6;
-$hexagon-height-tablet: $hexagon-height * 1.6;
-$hexagon-margin-tablet: $hexagon-margin * 1.6;
+$hexagon-width-tablet: $hexagon-width * $scale-factor-tablet-vw;
+$hexagon-height-tablet: $hexagon-height * $scale-factor-tablet-vw;
+$hexagon-margin-tablet: $hexagon-margin * $scale-factor-tablet-vw;
+
+$hexagon-width-desktop: $hexagon-width * $scale-factor-desktop-vw;
+$hexagon-height-desktop: $hexagon-height * $scale-factor-desktop-vw;
+$hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
 
 $low-height-scale-factor: 0.6;
 
@@ -27,23 +31,14 @@ $low-height-scale-factor: 0.6;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: getVw(getVwSizeForScreenWidth($padding-top-mobile, 'mobile'))
-    getVw(getVwSizeForScreenWidth($padding-left-right-mobile, 'mobile'))
-    0
-    getVw(getVwSizeForScreenWidth($padding-left-right-mobile, 'mobile'));
+  padding: #{$padding-top-mobile}px #{$padding-left-right-mobile}px 0 #{$padding-left-right-mobile}px;
 
   @include breakpoint('tablet') {
-    padding: getVw(getVwSizeForScreenWidth($padding-top-tablet, 'tablet'))
-      getVw(getVwSizeForScreenWidth($padding-left-right-tablet, 'tablet'))
-      0
-      getVw(getVwSizeForScreenWidth($padding-left-right-tablet, 'tablet'));
+    padding: #{$padding-top-tablet}px #{$padding-left-right-tablet}px 0 #{$padding-left-right-tablet}px
   }
 
   @include breakpoint('desktop') {
-    padding: getVw(getVwSizeForScreenWidth($padding-top-desktop, 'desktop'))
-    getVw(getVwSizeForScreenWidth($padding-left-right-desktop, 'desktop'))
-    0
-    getVw(getVwSizeForScreenWidth($padding-left-right-desktop, 'desktop'));
+    padding: #{$padding-top-tablet}px #{$padding-left-right-tablet}px 0 #{$padding-left-right-tablet}px
   }
 }
 
@@ -90,10 +85,10 @@ $low-height-scale-factor: 0.6;
 
 .tagLine {
   font-family: $font-mono;
-  font-size: $font-size-tagLine;
+  font-size: getVw($font-size-tagLine);
   font-weight: 400;
   line-height: getVw($tagLine-line-height);
-  margin-top: 40px;
+  margin-top: getVw(getVwSizeForScreenWidth(20, 'mobile'));
   z-index: 2;
   @include textShadow($color-black);
   @include breakpoint('tablet') {
@@ -141,13 +136,17 @@ $low-height-scale-factor: 0.6;
   z-index: 1;
   bottom: 0;
   right: 0;
-  width: $hexagon-width * 1.5 + $hexagon-margin;
-  height: $hexagon-height * 1.8;
+  width: getVw($hexagon-width * 1.5 + $hexagon-margin);
+  height: getVw($hexagon-height * 1.8);
   overflow: hidden;
 
   @include breakpoint('tablet') {
-    width: $hexagon-width-tablet * 1.5 + $hexagon-margin-tablet;
-    height: $hexagon-height-tablet * 1.8;
+    width: getVw($hexagon-width-tablet * 1.5 + $hexagon-margin-tablet);
+    height: getVw($hexagon-height-tablet * 1.8);
+  }
+  @include breakpoint('desktop') {
+    width: getVw($hexagon-width-desktop * 1.5 + $hexagon-margin-desktop);
+    height: getVw($hexagon-height-desktop * 1.8);
   }
   @include breakpoint('low-height') {
     zoom: $low-height-scale-factor;
@@ -155,45 +154,60 @@ $low-height-scale-factor: 0.6;
 }
 
 .introBackground__hexagon {
-  width: $hexagon-width;
-  height: $hexagon-height;
+  width: getVw($hexagon-width);
+  height: getVw($hexagon-height);
   position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
 
   @include breakpoint('tablet') {
-    width: $hexagon-width-tablet;
-    height: $hexagon-height-tablet;
+    width: getVw($hexagon-width-tablet);
+    height: getVw($hexagon-height-tablet);
+  }
+  @include breakpoint('desktop') {
+    width: getVw($hexagon-width-desktop);
+    height: getVw($hexagon-height-desktop);
   }
 }
 
 .introBackground__hexagon--fill {
   background-image: url('/assets/ui/hexagon-fill.svg');
   bottom: 0;
-  right: -$hexagon-width / 2;
+  right: getVw(-($hexagon-width) / 2);
 
   @include breakpoint('tablet') {
-    right: -$hexagon-width-tablet / 2;
+    right: getVw(-($hexagon-width-tablet) / 2);
+  }
+
+  @include breakpoint('desktop') {
+    right: getVw(-($hexagon-width-desktop) / 2);
   }
 }
 
 .introBackground__hexagon--outline {
   background-image: url('/assets/ui/hexagon-outline.svg');
-  right: $hexagon-margin / 2;
-  bottom: $hexagon-height * 0.79;
+  right: getVw($hexagon-margin / 2);
+  bottom: getVw($hexagon-height * 0.79);
 
   @include breakpoint('tablet') {
-    right: $hexagon-margin-tablet / 2;
-    bottom: $hexagon-height-tablet * 0.79;
+    right: getVw($hexagon-margin-tablet / 2);
+    bottom: getVw($hexagon-height-tablet * 0.79);
+  }
+  @include breakpoint('desktop') {
+    right: getVw($hexagon-margin-desktop / 2);
+    bottom: getVw($hexagon-height-desktop * 0.79);
   }
 }
 
 .introBackground__hexagon--image {
   background-image: url('/assets/coen-koopmans-picture.png');
   bottom: 0;
-  right: ($hexagon-width / 2) + $hexagon-margin;
+  right: getVw(($hexagon-width / 2) + $hexagon-margin);
 
   @include breakpoint('tablet') {
-    right: ($hexagon-width-tablet / 2) + $hexagon-margin-tablet;
+    right: getVw(($hexagon-width-tablet / 2) + $hexagon-margin-tablet);
+  }
+  @include breakpoint('desktop') {
+    right: getVw(($hexagon-width-desktop / 2) + $hexagon-margin-desktop);
   }
 }
