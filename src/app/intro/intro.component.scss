@@ -111,12 +111,12 @@ $low-height-scale-factor: 0.5;
   @include breakpoint('tablet') {
     width: getVw($scroll-button-width * $scale-factor-tablet-vw);
     height: getVw($scroll-button-height * $scale-factor-tablet-vw);
-    padding: $scroll-button-padding * $scale-factor-tablet;
+    padding: #{$scroll-button-padding * $scale-factor-tablet}px;
   }
   @include breakpoint('desktop') {
     width: getVw($scroll-button-width * $scale-factor-desktop-vw);
     height: getVw($scroll-button-height * $scale-factor-desktop-vw);
-    padding: $scroll-button-padding * $scale-factor-desktop;
+    padding: #{$scroll-button-padding * $scale-factor-desktop}px;
   }
 
   @include breakpoint('low-height') {
