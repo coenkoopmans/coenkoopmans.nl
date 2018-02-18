@@ -1,13 +1,11 @@
 @import '../variables.scss';
 
-// Divide pixel amount from design by 320, the smallest denominator screen width, multiply by 100 to get a percentage
-// Sass doesn't seem to like calculations here...
-$font-size-h1-small: 9.375vw; // 30px
-$font-size-h1-big: 15.9375vw; // 51px
-$font-size-tagLine: 5.625vw; // 18px
+$font-size-h1-small: getVwSizeForScreenWidth(30, 'mobile');
+$font-size-h1-big: getVwSizeForScreenWidth(51, 'mobile');
+$font-size-tagLine: getVwSizeForScreenWidth(18, 'mobile');
 
-$name-first-last-line-height: 17.1875vw;
-$tagLine-line-height: 10.9375vw;
+$name-first-last-line-height: getVwSizeForScreenWidth(62, 'mobile');
+$tagLine-line-height: getVwSizeForScreenWidth(35, 'mobile');
 
 // These are calculated as follows: ($targetSize/$targetScreenWidth)/($mobileSize/$mobileScreenWidth) in the designs,
 // where "size" can refer to any element that scales according to $scale-factor-{screenSize}
@@ -58,28 +56,28 @@ $low-height-scale-factor: 0.6;
 
 .name {
   font-weight: 300;
-  font-size: $font-size-h1-small;
+  font-size: getVw($font-size-h1-small);
   z-index: 2;
-  @include text-shadow(rgba($color-black, 0.8));
+  @include textShadow(rgba($color-black, 0.8));
   @include breakpoint('tablet') {
-    font-size: $font-size-h1-small * $font-size-textContainer-scale-factor-tablet;
+    font-size: getVw($font-size-h1-small * $font-size-textContainer-scale-factor-tablet);
   }
   @include breakpoint('desktop') {
-    font-size: $font-size-h1-small * $font-size-textContainer-scale-factor-desktop;
+    font-size: getVw($font-size-h1-small * $font-size-textContainer-scale-factor-desktop);
   }
 }
 .name--first, .name--last {
   display: block; // Force new line by setting block-level rendering
   font-weight: 700;
-  font-size: $font-size-h1-big;
-  line-height: $name-first-last-line-height;
+  font-size: getVw($font-size-h1-big);
+  line-height: getVw($name-first-last-line-height);
   @include breakpoint('tablet') {
-    font-size: $font-size-h1-big * $font-size-textContainer-scale-factor-tablet;
-    line-height: $name-first-last-line-height * $font-size-textContainer-scale-factor-tablet;
+    font-size: getVw($font-size-h1-big * $font-size-textContainer-scale-factor-tablet);
+    line-height: getVw($name-first-last-line-height * $font-size-textContainer-scale-factor-tablet);
   }
   @include breakpoint('desktop') {
-    font-size: $font-size-h1-big * $font-size-textContainer-scale-factor-desktop;
-    line-height: $name-first-last-line-height * $font-size-textContainer-scale-factor-desktop;
+    font-size: getVw($font-size-h1-big * $font-size-textContainer-scale-factor-desktop);
+    line-height: getVw($name-first-last-line-height * $font-size-textContainer-scale-factor-desktop);
   }
 }
 .name--lastEmphasis {
@@ -90,17 +88,17 @@ $low-height-scale-factor: 0.6;
   font-family: $font-mono;
   font-size: $font-size-tagLine;
   font-weight: 400;
-  line-height: $tagLine-line-height;
+  line-height: getVw($tagLine-line-height);
   margin-top: 40px;
   z-index: 2;
-  @include text-shadow($color-black);
+  @include textShadow($color-black);
   @include breakpoint('tablet') {
-    font-size: $font-size-tagLine * $font-size-textContainer-scale-factor-tablet;
-    line-height: $tagLine-line-height * $font-size-textContainer-scale-factor-tablet;
+    font-size: getVw($font-size-tagLine * $font-size-textContainer-scale-factor-tablet);
+    line-height: getVw($tagLine-line-height * $font-size-textContainer-scale-factor-tablet);
   }
   @include breakpoint('desktop') {
-    font-size: $font-size-tagLine * $font-size-textContainer-scale-factor-desktop;
-    line-height: $tagLine-line-height * $font-size-textContainer-scale-factor-desktop;
+    font-size: getVw($font-size-tagLine * $font-size-textContainer-scale-factor-desktop);
+    line-height: getVw($tagLine-line-height * $font-size-textContainer-scale-factor-desktop);
   }
 }
 .tagLine--emphasis {
@@ -116,7 +114,7 @@ $low-height-scale-factor: 0.6;
   padding: $scroll-button-padding;
   align-self: center;
   z-index: 1337;
-  @include drop-shadow();
+  @include dropShadow();
 
   @include breakpoint('tablet') {
     width: $scroll-button-width * $scale-factor-tablet;

@@ -13,6 +13,11 @@ $font-mono: 'Fira Mono', "Courier New", Courier, monospace;
 $font-size-regular: 18px;
 $font-size-heading: 45px;
 
+// Arbitrary, lifted from designs - in px (but can't add px unit due to calculation bugs with odd units in scss)
+$base-screen-size-mobile: 320;
+$base-screen-size-tablet: 768;
+$base-screen-size-desktop: 1440;
+
 $scale-factor-tablet: 1.5;
 $scale-factor-desktop: 1.9;
 
@@ -33,11 +38,29 @@ $shadow-white: 1px 1px 1px $color-white;
   @return #{$pixels/$context}em;
 }
 
-@mixin drop-shadow() {
+@function getVw($value) {
+  @return #{$value}vw;
+}
+
+// Input is in px - gets a vw size for a given input and base screen size. Calculated relative to design, which is
+// made for three base sizes.
+@function getVwSizeForScreenWidth($inputInPx, $size) {
+  @if $size == 'tablet' {
+    @return $inputInPx / $base-screen-size-tablet * 100;
+  }
+  @if $size == 'desktop' {
+    @return $inputInPx / $base-screen-size-desktop * 100;
+  }
+  @else { // Mobile
+    @return $inputInPx / $base-screen-size-mobile * 100;
+  }
+}
+
+@mixin dropShadow() {
   filter: drop-shadow($shadow-main);
 }
 
-@mixin text-shadow($color) {
+@mixin textShadow($color) {
   text-shadow: emFromPx(1) emFromPx(1) 0 $color;
 }
 

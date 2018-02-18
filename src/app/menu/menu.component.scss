@@ -16,7 +16,7 @@ $menu-button-top-desktop: 70px;
   top: $menu-button-top-mobile - $menu-button-padding;
   padding: $menu-button-padding;
   z-index: 1337;
-  @include drop-shadow();
+  @include dropShadow();
 
   @include breakpoint('tablet') {
     width: $menu-button-width * $scale-factor-tablet;
