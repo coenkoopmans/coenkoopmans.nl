@@ -37,7 +37,7 @@ $low-height-scale-factor: 0.5;
   }
 
   @include breakpoint('desktop') {
-    padding: #{$padding-top-desktop} #{$padding-left-right-desktop}px 0 #{$padding-left-right-desktop}px
+    padding: #{$padding-top-desktop}px #{$padding-left-right-desktop}px 0 #{$padding-left-right-desktop}px
   }
 }
 
