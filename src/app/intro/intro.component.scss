@@ -7,13 +7,8 @@ $font-size-tagLine: getVwSizeForScreenWidth(18, 'mobile');
 $name-first-last-line-height: getVwSizeForScreenWidth(62, 'mobile');
 $tagLine-line-height: getVwSizeForScreenWidth(35, 'mobile');
 
-// These are calculated as follows: ($targetSize/$targetScreenWidth)/($mobileSize/$mobileScreenWidth) in the designs,
-// where "size" can refer to any element that scales according to $scale-factor-{screenSize}
-$font-size-textContainer-scale-factor-tablet: 0.625;
-$font-size-textContainer-scale-factor-desktop: 0.417;
-
-$scroll-button-width: 42px;
-$scroll-button-height: 15px;
+$scroll-button-width: getVwSizeForScreenWidth(42, 'mobile');
+$scroll-button-height: getVwSizeForScreenWidth(15, 'mobile');
 $scroll-button-padding: 10px;
 
 $hexagon-width: 257px;
@@ -60,10 +55,10 @@ $low-height-scale-factor: 0.6;
   z-index: 2;
   @include textShadow(rgba($color-black, 0.8));
   @include breakpoint('tablet') {
-    font-size: getVw($font-size-h1-small * $font-size-textContainer-scale-factor-tablet);
+    font-size: getVw($font-size-h1-small * $scale-factor-tablet-vw);
   }
   @include breakpoint('desktop') {
-    font-size: getVw($font-size-h1-small * $font-size-textContainer-scale-factor-desktop);
+    font-size: getVw($font-size-h1-small * $scale-factor-desktop-vw);
   }
 }
 .name--first, .name--last {
@@ -72,12 +67,12 @@ $low-height-scale-factor: 0.6;
   font-size: getVw($font-size-h1-big);
   line-height: getVw($name-first-last-line-height);
   @include breakpoint('tablet') {
-    font-size: getVw($font-size-h1-big * $font-size-textContainer-scale-factor-tablet);
-    line-height: getVw($name-first-last-line-height * $font-size-textContainer-scale-factor-tablet);
+    font-size: getVw($font-size-h1-big * $scale-factor-tablet-vw);
+    line-height: getVw($name-first-last-line-height * $scale-factor-tablet-vw);
   }
   @include breakpoint('desktop') {
-    font-size: getVw($font-size-h1-big * $font-size-textContainer-scale-factor-desktop);
-    line-height: getVw($name-first-last-line-height * $font-size-textContainer-scale-factor-desktop);
+    font-size: getVw($font-size-h1-big * $scale-factor-desktop-vw);
+    line-height: getVw($name-first-last-line-height * $scale-factor-desktop-vw);
   }
 }
 .name--lastEmphasis {
@@ -93,12 +88,12 @@ $low-height-scale-factor: 0.6;
   z-index: 2;
   @include textShadow($color-black);
   @include breakpoint('tablet') {
-    font-size: getVw($font-size-tagLine * $font-size-textContainer-scale-factor-tablet);
-    line-height: getVw($tagLine-line-height * $font-size-textContainer-scale-factor-tablet);
+    font-size: getVw($font-size-tagLine * $scale-factor-tablet-vw);
+    line-height: getVw($tagLine-line-height * $scale-factor-tablet-vw);
   }
   @include breakpoint('desktop') {
-    font-size: getVw($font-size-tagLine * $font-size-textContainer-scale-factor-desktop);
-    line-height: getVw($tagLine-line-height * $font-size-textContainer-scale-factor-desktop);
+    font-size: getVw($font-size-tagLine * $scale-factor-desktop-vw);
+    line-height: getVw($tagLine-line-height * $scale-factor-desktop-vw);
   }
 }
 .tagLine--emphasis {
@@ -107,8 +102,8 @@ $low-height-scale-factor: 0.6;
 
 .scrollDownButton {
   box-sizing: content-box;
-  width: $scroll-button-width;
-  height: $scroll-button-height;
+  width: getVw($scroll-button-width);
+  height: getVw($scroll-button-height);
   position: fixed;
   bottom: 0;
   padding: $scroll-button-padding;
@@ -117,13 +112,13 @@ $low-height-scale-factor: 0.6;
   @include dropShadow();
 
   @include breakpoint('tablet') {
-    width: $scroll-button-width * $scale-factor-tablet;
-    height: $scroll-button-height * $scale-factor-tablet;
+    width: getVw($scroll-button-width * $scale-factor-tablet-vw);
+    height: getVw($scroll-button-height * $scale-factor-tablet-vw);
     padding: $scroll-button-padding * $scale-factor-tablet;
   }
   @include breakpoint('desktop') {
-    width: $scroll-button-width * $scale-factor-desktop;
-    height: $scroll-button-height * $scale-factor-desktop;
+    width: getVw($scroll-button-width * $scale-factor-desktop-vw);
+    height: getVw($scroll-button-height * $scale-factor-desktop-vw);
     padding: $scroll-button-padding * $scale-factor-desktop;
   }
 }
