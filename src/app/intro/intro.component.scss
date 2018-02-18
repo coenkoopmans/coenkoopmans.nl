@@ -105,6 +105,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   z-index: 1337;
   cursor: pointer;
   @include dropShadow();
+  @include bounce;
 
   @include breakpoint('tablet') {
     width: getVw($scroll-button-width * $scale-factor-tablet-vw);
