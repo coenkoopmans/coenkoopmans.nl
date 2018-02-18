@@ -1,33 +1,36 @@
 @import '../shared/base';
 
-$menu-button-padding: 10px;
+$menu-button-padding: 10px; // in px
 
-$menu-button-width: 34px;
-$menu-button-height: 24px;
+$menu-button-width: getVwSizeForScreenWidth(34, 'mobile');
+$menu-button-height: getVwSizeForScreenWidth(24, 'mobile');
 
 $menu-button-top-mobile: 45px;
 $menu-button-top-tablet: 70px;
 $menu-button-top-desktop: 70px;
 
 .menuButton {
+  width: getVw($menu-button-width);
+  height: getVw($menu-button-height);
   box-sizing: content-box;
   position: absolute;
   right: $padding-left-right-mobile - $menu-button-padding;
-  top: $menu-button-top-mobile - $menu-button-padding;
+  top: $padding-top-mobile - $menu-button-padding;
   padding: $menu-button-padding;
   z-index: 1337;
+  cursor: pointer;
   @include dropShadow();
 
   @include breakpoint('tablet') {
-    width: $menu-button-width * $scale-factor-tablet;
-    height: $menu-button-height * $scale-factor-tablet;
+    width: getVw($menu-button-width * $scale-factor-tablet-vw);
+    height: getVw($menu-button-height * $scale-factor-tablet-vw);
 
     right: $padding-left-right-tablet - $menu-button-padding;
-    top: $menu-button-top-tablet - $menu-button-padding;
+    top: $padding-top-tablet - $menu-button-padding;
   }
   @include breakpoint('desktop') {
-    width: $menu-button-width * $scale-factor-desktop;
-    height: $menu-button-height * $scale-factor-desktop;
+    width: getVw($menu-button-width * $scale-factor-desktop-vw);
+    height: getVw($menu-button-height * $scale-factor-desktop-vw);
 
     right: $padding-left-right-desktop - $menu-button-padding;
     top: $menu-button-top-desktop - $menu-button-padding;

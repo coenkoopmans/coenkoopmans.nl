@@ -105,6 +105,7 @@ $low-height-scale-factor: 0.5;
   padding: #{$scroll-button-padding}px;
   align-self: center;
   z-index: 1337;
+  cursor: pointer;
   @include dropShadow();
 
   @include breakpoint('tablet') {
