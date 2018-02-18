@@ -6,7 +6,7 @@
 }
 
 @mixin textShadow($color) {
-  text-shadow: emFromPx(1) emFromPx(1) 0 $color;
+  text-shadow: emFromPx(0.5) emFromPx(0.5) 0 $color;
 }
 
 @mixin breakpoint($name) {
