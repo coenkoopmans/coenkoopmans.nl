@@ -27,14 +27,23 @@ $low-height-scale-factor: 0.6;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 39px 25px 0 25px;
+  padding: getVw(getVwSizeForScreenWidth($padding-top-mobile, 'mobile'))
+    getVw(getVwSizeForScreenWidth($padding-left-right-mobile, 'mobile'))
+    0
+    getVw(getVwSizeForScreenWidth($padding-left-right-mobile, 'mobile'));
 
   @include breakpoint('tablet') {
-    padding: 7.8125vw 5.2083vw 0 5.2083vw;
+    padding: getVw(getVwSizeForScreenWidth($padding-top-tablet, 'tablet'))
+      getVw(getVwSizeForScreenWidth($padding-left-right-tablet, 'tablet'))
+      0
+      getVw(getVwSizeForScreenWidth($padding-left-right-tablet, 'tablet'));
   }
 
   @include breakpoint('desktop') {
-    padding: 5.1389vw 3.472vw 0 3.472vw;
+    padding: getVw(getVwSizeForScreenWidth($padding-top-desktop, 'desktop'))
+    getVw(getVwSizeForScreenWidth($padding-left-right-desktop, 'desktop'))
+    0
+    getVw(getVwSizeForScreenWidth($padding-left-right-desktop, 'desktop'));
   }
 }
 

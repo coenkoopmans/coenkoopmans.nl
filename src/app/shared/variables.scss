@@ -39,13 +39,15 @@ $browser-context-em: 16; // 16px = 1em by default
 
 // Global padding
 
-$padding-left-right-mobile: 25px;
-$padding-left-right-tablet: 40px;
-$padding-left-right-desktop: 50px;
+// In px
+$padding-left-right-mobile: 25;
+$padding-left-right-tablet: 40;
+$padding-left-right-desktop: 50;
 
-$padding-top-mobile: 40px;
-$padding-top-tablet: 60px;
-$padding-top-desktop: 50px;
+// In px
+$padding-top-mobile: 40;
+$padding-top-tablet: 60;
+$padding-top-desktop: 50;
 
 // Shadows
 
