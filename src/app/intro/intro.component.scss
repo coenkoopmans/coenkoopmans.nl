@@ -3,7 +3,7 @@
 $font-size-h1: getVwSizeForScreenWidth(51, 'mobile');
 $font-size-tagLine: getVwSizeForScreenWidth(18, 'mobile');
 
-$name-first-last-line-height: getVwSizeForScreenWidth(55, 'mobile');
+$name-first-last-line-height: getVwSizeForScreenWidth(60, 'mobile');
 $tagLine-line-height: getVwSizeForScreenWidth(35, 'mobile');
 
 $scroll-button-width: getVwSizeForScreenWidth(42, 'mobile');
@@ -28,7 +28,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: calc(#{$padding-top-mobile}px - 3vw) #{$padding-left-right-mobile}px 0 #{$padding-left-right-mobile}px;
+  padding: calc(#{$padding-top-mobile}px - 3.5vw) #{$padding-left-right-mobile}px 0 #{$padding-left-right-mobile}px;
 
   @include breakpoint('tablet') {
     padding: calc(#{$padding-top-tablet}px - 1vw) #{$padding-left-right-tablet}px 0 #{$padding-left-right-tablet}px
