@@ -11,7 +11,7 @@ describe('App', () => {
   it('should find all images', () => expect(page.getBrokenImagesCount()).toBe(0));
 
   it('should display the page title', () =>
-    expect(page.getPageTitle()).toEqual('Ik ben\nCoen\nKoopmans.'));
+    expect(page.getPageTitle()).toEqual('Coen\nKoopmans.'));
 
   it('should display the tag line', () =>
     expect(page.getTagLine())
