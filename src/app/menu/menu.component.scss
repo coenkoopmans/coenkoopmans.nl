@@ -35,6 +35,9 @@ $menu-button-top-desktop: 70px;
     right: $padding-left-right-desktop - $menu-button-padding;
     top: $menu-button-top-desktop - $menu-button-padding;
   }
+  @include breakpoint('low-height') {
+    zoom: $low-height-scale-factor;
+  }
 }
 
 .menuButton--image {

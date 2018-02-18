@@ -28,6 +28,8 @@ $scale-factor-mobile: 1;
 $scale-factor-tablet: 1.5;
 $scale-factor-desktop: 1.9;
 
+$low-height-scale-factor: 0.5;
+
 // The scale factor needed to multiply elements sizes for tablet/desktop, based on design base sizes - for vw use cases
 // Explanation for later reference: a tablet, for example, has a way wider screen size than a mobile phone. (Both in portrait.)
 // When using a size relative to the Viewport Width, the size of the element in absolutes (px) might be a factor of say 1.5
