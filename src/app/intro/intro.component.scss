@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import '../shared/base';
 
 $font-size-h1-small: getVwSizeForScreenWidth(30, 'mobile');
 $font-size-h1-big: getVwSizeForScreenWidth(51, 'mobile');

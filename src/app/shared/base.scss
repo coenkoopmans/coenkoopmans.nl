@@ -1,0 +1,37 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Roboto|Roboto+Slab:300,700');
+
+* {
+  box-sizing: border-box;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: $color-black;
+  font-family: $font-regular;
+  color: $color-white;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headings;
+}
+
+em {
+  font-style: normal;
+}
+
+pre {
+  font-family: $font-mono;
+}
+
+a:focus, button:focus {
+  outline-color: $color-blue;
+}

@@ -1,0 +1,35 @@
+$color-black: #1A1A1A;
+$color-white: #FFFFFF;
+
+$color-gray-dark: #2F2F2F;
+
+$color-red: #EB4444;
+$color-blue: #0097A7;
+
+$font-regular: 'Roboto', Helvetica, Arial, sans-serif;
+$font-headings: 'Roboto Slab', 'Roboto', Helvetica, Arial, sans-serif;
+$font-mono: 'Fira Mono', "Courier New", Courier, monospace;
+
+$font-size-regular: 18px;
+$font-size-heading: 45px;
+
+// Arbitrary, lifted from designs - in px (but can't add px unit due to calculation bugs with odd units in scss)
+$base-screen-size-mobile: 320;
+$base-screen-size-tablet: 768;
+$base-screen-size-desktop: 1440;
+
+$scale-factor-tablet: 1.5;
+$scale-factor-desktop: 1.9;
+
+$browser-context-em: 16; // 16px = 1em by default
+
+$padding-left-right-mobile: 25px;
+$padding-left-right-tablet: 40px;
+$padding-left-right-desktop: 50px;
+
+$padding-top-mobile: 40px;
+$padding-top-tablet: 60px;
+$padding-top-desktop: 50px;
+
+$shadow-main: 1px 1px 1px $color-black;
+$shadow-white: 1px 1px 1px $color-white;
