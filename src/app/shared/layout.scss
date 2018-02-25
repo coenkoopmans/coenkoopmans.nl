@@ -1,4 +1,11 @@
 .container {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: calc(#{$padding-top-mobile}px - 3.5vw) #{$padding-left-right-mobile}px 0 #{$padding-left-right-mobile}px;
+
+  @include breakpoint('tablet') {
+    padding: calc(#{$padding-top-tablet}px - 1vw) #{$padding-left-right-tablet}px 0 #{$padding-left-right-tablet}px
+  }
+
+  @include breakpoint('desktop') {
+    padding: #{$padding-top-desktop}px #{$padding-left-right-desktop}px 0 #{$padding-left-right-desktop}px
+  }
 }

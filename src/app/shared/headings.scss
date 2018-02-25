@@ -1,21 +1,22 @@
-$heading-distance: 0.3em;
+$heading-decoration-distance: 0.5em;
 
 .heading {
   &:before, &:after {
-    position: relative;
+    position: absolute;
     color: $color-gray-dark;
   }
   &:before {
     content: "{";
-    left: -$heading-distance;
+    left: -$heading-decoration-distance;
   }
   &:after {
     content: "}";
-    right: -$heading-distance;
+    right: -$heading-decoration-distance;
   }
 }
 
 h2.heading {
+  display: inline-block;
   position: relative;
   font-size: getVw($font-size-heading);
   font-weight: 700;
