@@ -1,0 +1,29 @@
+$heading-distance: 0.3em;
+
+.heading {
+  &:before, &:after {
+    position: relative;
+    color: $color-gray-dark;
+  }
+  &:before {
+    content: "{";
+    left: -$heading-distance;
+  }
+  &:after {
+    content: "}";
+    right: -$heading-distance;
+  }
+}
+
+h2.heading {
+  position: relative;
+  font-size: getVw($font-size-heading);
+  font-weight: 700;
+
+  @include breakpoint('tablet') {
+    font-size: getVw($font-size-heading * $scale-factor-tablet-vw);
+  }
+  @include breakpoint('desktop') {
+    font-size: getVw($font-size-heading * $scale-factor-desktop-vw);
+  }
+}

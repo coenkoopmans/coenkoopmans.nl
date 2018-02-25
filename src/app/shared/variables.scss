@@ -14,8 +14,8 @@ $font-regular: 'Roboto', Helvetica, Arial, sans-serif;
 $font-headings: 'Roboto Slab', 'Roboto', Helvetica, Arial, sans-serif;
 $font-mono: 'Fira Mono', "Courier New", Courier, monospace;
 
-$font-size-regular: 18px;
-$font-size-heading: 45px;
+$font-size-regular: getVwSizeForScreenWidth(18, 'mobile');
+$font-size-heading: getVwSizeForScreenWidth(30, 'mobile');
 
 // Scaling
 
