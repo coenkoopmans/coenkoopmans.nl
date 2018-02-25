@@ -23,6 +23,7 @@ $hexagon-height-desktop: $hexagon-height * $scale-factor-desktop-vw;
 $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
 
 .intro {
+  position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -98,7 +99,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   box-sizing: content-box;
   width: getVw($scroll-button-width);
   height: getVw($scroll-button-height);
-  position: fixed;
+  position: absolute;
   bottom: 0;
   padding: #{$scroll-button-padding}px;
   align-self: center;
@@ -128,7 +129,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
 }
 
 .introBackground {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   bottom: 0;
   right: 0;
