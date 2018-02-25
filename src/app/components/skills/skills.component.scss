@@ -6,3 +6,44 @@
   }
 }
 
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skills__item {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 300px;
+  color: $color-black;
+
+  font-weight: 700;
+  font-size: getVw($font-size-regular);
+  @include breakpoint('tablet') {
+    font-size: getVw($font-size-regular * $scale-factor-tablet-vw);
+  }
+  @include breakpoint('desktop') {
+    font-size: getVw($font-size-regular * $scale-factor-desktop-vw);
+  }
+}
+
+.skills__item:nth-of-type(4n + 1) {
+  background-image: url('/assets/ui/hexagon-fill-blue.svg');
+}
+.skills__item:nth-of-type(4n + 2) {
+  background-image: url('/assets/ui/hexagon-outline-red.svg');
+  color: $color-red;
+}
+.skills__item:nth-of-type(4n + 3) {
+  background-image: url('/assets/ui/hexagon-outline-blue.svg');
+  color: $color-blue;
+}
+.skills__item:nth-of-type(4n + 4) {
+  background-image: url('/assets/ui/hexagon-fill-red.svg');
+}

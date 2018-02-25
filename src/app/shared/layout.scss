@@ -1,3 +1,19 @@
+// Hexagons
+
+$hexagon-width: getVwSizeForScreenWidth(214, 'mobile');
+$hexagon-height: getVwSizeForScreenWidth(244, 'mobile');
+$hexagon-margin: getVwSizeForScreenWidth(12, 'mobile');
+
+$hexagon-width-tablet: $hexagon-width * $scale-factor-tablet-vw;
+$hexagon-height-tablet: $hexagon-height * $scale-factor-tablet-vw;
+$hexagon-margin-tablet: $hexagon-margin * $scale-factor-tablet-vw;
+
+$hexagon-width-desktop: $hexagon-width * $scale-factor-desktop-vw;
+$hexagon-height-desktop: $hexagon-height * $scale-factor-desktop-vw;
+$hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
+
+// Containers
+
 .container {
   padding: calc(#{$padding-top-mobile}px - 3.5vw) #{$padding-left-right-mobile}px 0 #{$padding-left-right-mobile}px;
   @include breakpoint('tablet') {
