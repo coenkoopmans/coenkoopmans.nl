@@ -1,2 +1,8 @@
 @import '../../shared/base';
 
+:host {
+  @include breakpoint('low-height') {
+    zoom: $low-height-scale-factor;
+  }
+}
+
