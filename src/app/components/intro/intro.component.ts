@@ -8,8 +8,7 @@ import { Component } from '@angular/core';
 export class IntroComponent {
   public scrollDown() {
     const element: HTMLElement = document.getElementsByClassName('intro')[0] as HTMLElement;
-    // TODO animate scrolling
-    window.scrollTo(window.scrollX, element.offsetHeight);
+    window.scroll({top: element.offsetHeight, left: window.scrollX, behavior: 'smooth'});
   }
 
 }
