@@ -19,6 +19,8 @@ $scroll-button-padding: getVwSizeForScreenWidth(50, 'mobile');
   flex-direction: column;
   padding: calc(#{$padding-top-mobile}px - 3.5vw) #{$padding-left-right-mobile}px 0 #{$padding-left-right-mobile}px;
 
+  // TODO integrate scroll snapping: https://css-tricks.com/introducing-css-scroll-snap-points/
+
   @include breakpoint('tablet') {
     padding: calc(#{$padding-top-tablet}px - 1vw) #{$padding-left-right-tablet}px 0 #{$padding-left-right-tablet}px
   }
