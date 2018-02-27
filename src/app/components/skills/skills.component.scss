@@ -28,6 +28,9 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   width: getVw($hexagon-width * 2 + $hexagon-margin);
   margin-left: auto;
   margin-right: auto;
+  @include breakpoint('tablet') {
+    width: getVw($hexagon-width-tablet * 3 + $hexagon-margin-tablet * 2);
+  }
 }
 
 .skills__item {
@@ -42,6 +45,8 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   font-weight: 700;
   font-size: getVw($font-size-regular);
   @include breakpoint('tablet') {
+    width: getVw($hexagon-width-tablet);
+    line-height: getVw($hexagon-height-tablet);
     font-size: getVw($font-size-regular * $scale-factor-tablet-vw);
   }
   @include breakpoint('desktop') {
@@ -50,13 +55,24 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
 }
 
 // Grid behavior
-@include breakpoint('mobile') {
+@include breakpoint('mobile') { // 2-1 hexagons per row
   .skills__item:nth-of-type(3n + 1) { // First of three
     margin-right: getVw($hexagon-margin);
   }
   .skills__item:nth-of-type(3n + 3) { // Third of three (separate, on new line)
-    margin-top: getVw(-$hexagon-margin * 0.21);
+    margin-top: getVw(-$hexagon-margin * 0.20);
     margin-left: getVw(0.625 * $hexagon-width);
+  }
+}
+@include breakpoint('tablet') { // 3-2 hexagons per row
+  .skills__item {
+    margin-right: getVw($hexagon-margin-tablet);
+  }
+  .skills__item:nth-of-type(5n+3) { // Repeating grid of 5
+    margin-right: 0;
+  }
+  .skills__item:nth-of-type(5n+4) {
+    margin-left: getVw(0.625 * $hexagon-width-tablet);
   }
 }
 
