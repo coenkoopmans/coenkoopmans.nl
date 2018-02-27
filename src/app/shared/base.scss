@@ -45,3 +45,8 @@ pre {
 a:focus, button:focus {
   outline-color: $color-blue;
 }
+
+::selection {
+  background: $color-white;
+  color: $color-black;
+}
