@@ -1,17 +1,3 @@
-// Hexagons
-
-$hexagon-width: getVwSizeForScreenWidth(214, 'mobile');
-$hexagon-height: getVwSizeForScreenWidth(244, 'mobile');
-$hexagon-margin: getVwSizeForScreenWidth(12, 'mobile');
-
-$hexagon-width-tablet: $hexagon-width * $scale-factor-tablet-vw;
-$hexagon-height-tablet: $hexagon-height * $scale-factor-tablet-vw;
-$hexagon-margin-tablet: $hexagon-margin * $scale-factor-tablet-vw;
-
-$hexagon-width-desktop: $hexagon-width * $scale-factor-desktop-vw;
-$hexagon-height-desktop: $hexagon-height * $scale-factor-desktop-vw;
-$hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
-
 // Containers
 
 .container {
@@ -21,5 +7,18 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   }
   @include breakpoint('desktop') {
     padding: #{$padding-top-desktop}px #{$padding-left-right-desktop}px 0 #{$padding-left-right-desktop}px
+  }
+}
+
+.container--cancel {
+  margin-left: #{-$padding-left-right-mobile}px;
+  margin-right: #{-$padding-left-right-mobile}px;
+  @include breakpoint('tablet') {
+    margin-left: #{-$padding-left-right-tablet}px;
+    margin-right: #{-$padding-left-right-tablet}px;
+  }
+  @include breakpoint('desktop') {
+    margin-left: #{-$padding-left-right-desktop}px;
+    margin-right: #{-$padding-left-right-desktop}px;
   }
 }

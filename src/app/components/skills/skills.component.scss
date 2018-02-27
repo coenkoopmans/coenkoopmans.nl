@@ -1,5 +1,19 @@
 @import '../../shared/base';
 
+// Hexagons
+
+$hexagon-width: getVwSizeForScreenWidth(120, 'mobile');
+$hexagon-height: getVwSizeForScreenWidth(137, 'mobile');
+$hexagon-margin: getVwSizeForScreenWidth(30, 'mobile');
+
+$hexagon-width-tablet: $hexagon-width * $scale-factor-tablet-vw;
+$hexagon-height-tablet: $hexagon-height * $scale-factor-tablet-vw;
+$hexagon-margin-tablet: $hexagon-margin * $scale-factor-tablet-vw;
+
+$hexagon-width-desktop: $hexagon-width * $scale-factor-desktop-vw;
+$hexagon-height-desktop: $hexagon-height * $scale-factor-desktop-vw;
+$hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
+
 :host {
   @include breakpoint('low-height') {
     zoom: $low-height-scale-factor;
@@ -9,18 +23,20 @@
 .skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-top: 25px;
+  width: getVw($hexagon-width * 2 + $hexagon-margin);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skills__item {
   display: block;
-  width: 300px;
-  height: 300px;
-  margin-bottom: 20px;
+  width: getVw($hexagon-width);
+  line-height: getVw($hexagon-height);
 
   background-size: 100% 100%;
   text-align: center;
-  line-height: 300px;
   color: $color-black;
 
   font-weight: 700;
@@ -33,6 +49,18 @@
   }
 }
 
+// Grid behavior
+@include breakpoint('mobile') {
+  .skills__item:nth-of-type(3n + 1) { // First of three
+    margin-right: getVw($hexagon-margin);
+  }
+  .skills__item:nth-of-type(3n + 3) { // Third of three (separate, on new line)
+    margin-top: getVw(-$hexagon-margin * 0.21);
+    margin-left: getVw(0.625 * $hexagon-width);
+  }
+}
+
+// Hexagon shape
 .skills__item:nth-of-type(4n + 1) {
   background-image: url('/assets/ui/hexagon-fill-blue.svg');
 }

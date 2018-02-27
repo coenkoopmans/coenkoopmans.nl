@@ -10,6 +10,20 @@ $scroll-button-width: getVwSizeForScreenWidth(42, 'mobile');
 $scroll-button-height: getVwSizeForScreenWidth(15, 'mobile');
 $scroll-button-padding: getVwSizeForScreenWidth(50, 'mobile');
 
+
+// Hexagons
+$hexagon-width: getVwSizeForScreenWidth(214, 'mobile');
+$hexagon-height: getVwSizeForScreenWidth(244, 'mobile');
+$hexagon-margin: getVwSizeForScreenWidth(12, 'mobile');
+
+$hexagon-width-tablet: $hexagon-width * $scale-factor-tablet-vw;
+$hexagon-height-tablet: $hexagon-height * $scale-factor-tablet-vw;
+$hexagon-margin-tablet: $hexagon-margin * $scale-factor-tablet-vw;
+
+$hexagon-width-desktop: $hexagon-width * $scale-factor-desktop-vw;
+$hexagon-height-desktop: $hexagon-height * $scale-factor-desktop-vw;
+$hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
+
 .intro {
   position: relative;
   width: 100%;
