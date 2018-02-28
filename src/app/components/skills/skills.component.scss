@@ -25,12 +25,8 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 25px;
-  width: getVw($hexagon-width * 2 + $hexagon-margin);
   margin-left: auto;
   margin-right: auto;
-  @include breakpoint('tablet') {
-    width: getVw($hexagon-width-tablet * 3 + $hexagon-margin-tablet * 2);
-  }
 }
 
 .skills__item {
@@ -50,21 +46,36 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
     font-size: getVw($font-size-regular * $scale-factor-tablet-vw);
   }
   @include breakpoint('desktop') {
+    width: getVw($hexagon-width-desktop);
+    line-height: getVw($hexagon-height-desktop);
     font-size: getVw($font-size-regular * $scale-factor-desktop-vw);
   }
 }
 
 // Grid behavior
 @include breakpoint('mobile') { // 2-1 hexagons per row
+  .skills {
+    width: getVw($hexagon-width * 2 + $hexagon-margin);
+  }
+
   .skills__item:nth-of-type(3n + 1) { // First of three
     margin-right: getVw($hexagon-margin);
   }
   .skills__item:nth-of-type(3n + 3) { // Third of three (separate, on new line)
     margin-top: getVw(-$hexagon-margin * 0.20);
-    margin-left: getVw(0.625 * $hexagon-width);
+    margin-left: getVw(
+      (
+        ($hexagon-width * 2 + $hexagon-margin) - 
+        ($hexagon-width)
+      ) / 2
+    );
   }
 }
 @include breakpoint('tablet') { // 3-2 hexagons per row
+  .skills {
+      width: getVw($hexagon-width-tablet * 3 + $hexagon-margin-tablet * 2);
+  }
+
   .skills__item {
     margin-right: getVw($hexagon-margin-tablet);
   }
@@ -72,7 +83,32 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
     margin-right: 0;
   }
   .skills__item:nth-of-type(5n+4) {
-    margin-left: getVw(0.625 * $hexagon-width-tablet);
+    margin-left: getVw(
+      (
+        ($hexagon-width-tablet * 3 + $hexagon-margin-tablet * 2) - 
+        ($hexagon-width-tablet * 2 + $hexagon-margin-tablet)
+      ) / 2
+    );
+  }
+}
+@include breakpoint('desktop') { // 4-3 hexagons per row
+  .skills {
+    width: getVw($hexagon-width-desktop * 4 + $hexagon-margin-desktop * 3);
+  }
+
+  .skills__item {
+    margin-right: getVw($hexagon-margin-desktop);
+  }
+  .skills__item:nth-of-type(7n+4) { // Repeating grid of 7
+    margin-right: 0;
+  }
+  .skills__item:nth-of-type(7n+5) {
+    margin-left: getVw(
+      (
+        ($hexagon-width-desktop * 4 + $hexagon-margin-desktop * 3) - 
+        ($hexagon-width-desktop * 3 + $hexagon-margin-desktop * 2)
+      ) / 2
+    );
   }
 }
 
@@ -90,4 +126,9 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
 }
 .skills__item:nth-of-type(4n + 4) {
   background-image: url('/assets/ui/hexagon-fill-red.svg');
+}
+.skills__item:last-of-type {
+  &.skills__item--filler {
+    background-image: url('/assets/ui/hexagon-fill-black.svg');
+  }
 }

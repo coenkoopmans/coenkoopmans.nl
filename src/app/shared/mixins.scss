@@ -14,7 +14,7 @@
     @media (min-width: 1080px) { @content; }
   }
   @else if $name == tablet {
-    @media (min-width: 768px) { @content; }
+    @media (min-width: 768px) and (max-width: 1079px) { @content; }
   }
   @else if $name == low-height {
     @media (max-height: 600px) and (max-width: 1080px) and (orientation: landscape) { @content; }
