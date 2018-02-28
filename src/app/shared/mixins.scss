@@ -25,7 +25,7 @@
   }
 }
 
-@mixin animation-jiggle($length: 8, $delay: 0) {
+@mixin animation-jiggle($length: 6, $delay: 0) {
   animation: jiggle #{$length}s #{$delay}s alternate ease-in-out infinite;
 }
 
@@ -34,7 +34,7 @@
     transform: scale(1);
   }
   to {
-    transform: scale(0.97);
+    transform: scale(0.95);
   }
 }
 
