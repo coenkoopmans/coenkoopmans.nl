@@ -22,4 +22,8 @@ export class AppPage {
   getMenuButton() {
     return element(by.css('app-root app-menu .menuButton'));
   }
+
+  getScrollDownButton() {
+    return element(by.css('.scrollDownButton'));
+  }
 }

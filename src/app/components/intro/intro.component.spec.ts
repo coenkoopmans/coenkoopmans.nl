@@ -22,4 +22,10 @@ describe('IntroComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should scroll down', () => {
+    spyOn(window, 'scroll');
+    component.scrollDown();
+    expect(window.scroll).toHaveBeenCalled();
+  });
 });

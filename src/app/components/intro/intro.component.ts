@@ -10,5 +10,4 @@ export class IntroComponent {
     const element: HTMLElement = document.getElementsByClassName('intro')[0] as HTMLElement;
     window.scroll({top: element.offsetHeight, left: window.scrollX, behavior: 'smooth'});
   }
-
 }

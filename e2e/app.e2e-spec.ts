@@ -19,4 +19,6 @@ describe('App', () => {
 
   it('should display the menu button', () => expect(page.getMenuButton()).toBeTruthy());
 
+  it('should display the scroll down button', () => expect(page.getScrollDownButton()).toBeTruthy());
+
 });
