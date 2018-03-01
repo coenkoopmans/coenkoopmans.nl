@@ -1,5 +1,7 @@
 @import '../../shared/base';
 
+$font-size-skills: getVwSizeForScreenWidth(12, 'mobile');
+
 // Hexagons
 
 $hexagon-width: getVwSizeForScreenWidth(120, 'mobile');
@@ -30,26 +32,33 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
 }
 
 .skills__item {
-  display: block;
+  display: flex;
+  align-items: center;
   width: getVw($hexagon-width);
-  line-height: getVw($hexagon-height);
+  height: getVw($hexagon-height);
 
   background-size: 100% 100%;
   text-align: center;
   color: $color-black;
 
   font-weight: 700;
-  font-size: getVw($font-size-regular);
+  font-size: getVw($font-size-skills);
   @include breakpoint('tablet') {
     width: getVw($hexagon-width-tablet);
-    line-height: getVw($hexagon-height-tablet);
-    font-size: getVw($font-size-regular * $scale-factor-tablet-vw);
+    height: getVw($hexagon-height-tablet);
+    font-size: getVw($font-size-skills * $scale-factor-tablet-vw);
   }
   @include breakpoint('desktop') {
     width: getVw($hexagon-width-desktop);
-    line-height: getVw($hexagon-height-desktop);
-    font-size: getVw($font-size-regular * $scale-factor-desktop-vw);
+    height: getVw($hexagon-height-desktop);
+    font-size: getVw($font-size-skills * $scale-factor-desktop-vw);
   }
+}
+
+.skills__itemLabel {
+  padding: 0 10% 0 10%;
+  width: 100%;
+  text-align: center;
 }
 
 // Grid behavior
