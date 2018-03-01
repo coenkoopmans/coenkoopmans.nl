@@ -43,6 +43,9 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
 
   font-weight: 700;
   font-size: getVw($font-size-skills);
+
+  @include animation-zoom;
+
   @include breakpoint('tablet') {
     width: getVw($hexagon-width-tablet);
     height: getVw($hexagon-height-tablet);

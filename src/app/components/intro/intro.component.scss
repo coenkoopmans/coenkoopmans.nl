@@ -176,7 +176,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   opacity: 0.2;
   bottom: 0;
   right: getVw(-($hexagon-width) / 2);
-  @include animation-jiggle;
+  @include animation-zoom;
 
   @include breakpoint('tablet') {
     right: getVw(-($hexagon-width-tablet) / 2);
@@ -192,7 +192,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   opacity: 0.2;
   right: getVw($hexagon-margin / 2);
   bottom: getVw($hexagon-height * 0.79);
-  @include animation-jiggle;
+  @include animation-zoom;
 
   @include breakpoint('tablet') {
     right: getVw($hexagon-margin-tablet / 2);
@@ -208,7 +208,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   background-image: url('/assets/coen-koopmans-picture.png');
   bottom: 0;
   right: getVw(($hexagon-width / 2) + $hexagon-margin);
-  @include animation-jiggle;
+  @include animation-zoom;
 
   @include breakpoint('tablet') {
     right: getVw(($hexagon-width-tablet / 2) + $hexagon-margin-tablet);

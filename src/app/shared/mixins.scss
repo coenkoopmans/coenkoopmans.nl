@@ -25,11 +25,11 @@
   }
 }
 
-@mixin animation-jiggle($length: 6, $delay: 0) {
-  animation: jiggle #{$length}s #{$delay}s alternate ease-in-out infinite;
+@mixin animation-zoom($length: 4, $delay: 0) {
+  animation: zoom #{$length}s #{$delay}s alternate ease-in-out infinite;
 }
 
-@keyframes jiggle {
+@keyframes zoom {
   from {
     transform: scale(1);
   }
