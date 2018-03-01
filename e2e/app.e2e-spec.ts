@@ -24,7 +24,10 @@ describe('App', () => {
   it('should display skills', () => {
     expect(page.getSkillsContainer()).toBeTruthy();
     expect(page.getSkills()).toBeTruthy();
-    console.log( page.getSkills().getText() );
+    page.getSkills().then((items) => {
+      expect(items.length).toBe(14); // including filler
+      expect(items[0].getText()).toBe('ESNext / Javascript');
+    });
   });
 
 });

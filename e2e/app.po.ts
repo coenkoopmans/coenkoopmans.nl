@@ -32,6 +32,6 @@ export class AppPage {
   }
 
   getSkills() {
-    return element(by.css('app-root app-skills .skills__item'));
+    return element.all(by.css('app-root app-skills .skills__item'));
   }
 }
