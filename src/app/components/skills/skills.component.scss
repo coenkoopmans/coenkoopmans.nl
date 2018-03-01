@@ -65,7 +65,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   .skills__item:nth-of-type(3n+2) { // Repeating grid of 5
     margin-right: 0;
   }
-  .skills__item:nth-of-type(3n + 3) { // Third of three (separate, on new line)
+  .skills__item:nth-of-type(3n+3) { // Third of three (separate, on new line)
     margin-left: getVw(
       (
         ($hexagon-width * 2 + $hexagon-margin) - 
@@ -137,6 +137,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
 }
 .skills__item:last-of-type {
   &.skills__item--filler {
-    background-image: url('/assets/ui/hexagon-outline-red.svg');
+    background-image: url('/assets/ui/hexagon-outline-black.svg');
+    margin-right: 0;
   }
 }
