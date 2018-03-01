@@ -26,4 +26,12 @@ export class AppPage {
   getScrollDownButton() {
     return element(by.css('.scrollDownButton'));
   }
+
+  getSkillsContainer() {
+    return element(by.css('app-root app-skills .skills'));
+  }
+
+  getSkills() {
+    return element(by.css('app-root app-skills .skills__item'));
+  }
 }

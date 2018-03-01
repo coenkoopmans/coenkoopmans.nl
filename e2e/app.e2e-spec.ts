@@ -21,4 +21,10 @@ describe('App', () => {
 
   it('should display the scroll down button', () => expect(page.getScrollDownButton()).toBeTruthy());
 
+  it('should display skills', () => {
+    expect(page.getSkillsContainer()).toBeTruthy();
+    expect(page.getSkills()).toBeTruthy();
+    console.log( page.getSkills().getText() );
+  });
+
 });
