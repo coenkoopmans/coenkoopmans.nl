@@ -26,9 +26,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 2rem auto;
 }
 
 .skills__item {

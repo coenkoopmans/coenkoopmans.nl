@@ -1,6 +1,42 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headings;
+}
+
+p {
+  font-size: getVw($font-size-regular);
+  margin-bottom: 1em;
+  line-height: 1.75em;
+  text-align: justify;
+
+  @include breakpoint('tablet') {
+    font-size: getVw($font-size-regular * $scale-factor-tablet-vw);
+  }
+  @include breakpoint('desktop') {
+    font-size: getVw($font-size-regular * $scale-factor-desktop-vw);
+  }
+}
+p > em {
+  color: $color-blue;
+  font-weight: bold;
+}
+p > strong {
+  color: $color-red;
+  font-weight: bold;
+}
+
+em {
+  font-style: normal;
+}
+
+pre {
+  font-family: $font-mono;
+}
+
 $heading-decoration-distance: 0.5em;
 
 .heading {
+  margin-bottom: 1rem;
+
   &:before, &:after {
     position: absolute;
     color: $color-gray-dark;
