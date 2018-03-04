@@ -41,15 +41,13 @@ $browser-context-em: 16; // 16px = 1em by default
 
 // Global padding
 
-// In px
-$padding-left-right-mobile: 25;
-$padding-left-right-tablet: 40;
-$padding-left-right-desktop: 50;
+$padding-left-right-mobile: getVwSizeForScreenWidth(25, 'mobile');
+$padding-left-right-tablet: getVwSizeForScreenWidth(40, 'tablet');
+$padding-left-right-desktop: getVwSizeForScreenWidth(50, 'desktop');
 
-// In px
-$padding-top-mobile: 40;
-$padding-top-tablet: 60;
-$padding-top-desktop: 50;
+$padding-top-mobile: getVwSizeForScreenWidth(40, 'mobile');
+$padding-top-tablet: getVwSizeForScreenWidth(60, 'tablet');
+$padding-top-desktop: getVwSizeForScreenWidth(50, 'desktop');
 
 // Shadows
 
