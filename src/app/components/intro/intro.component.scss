@@ -105,8 +105,11 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   height: getVw($scroll-button-height);
   position: absolute;
   bottom: 0;
+  // Tried to use "align-self: center;", but this led to problems with Firefox and IE11
+  left: 0;
+  right: 0;
+  margin: auto;
   padding: #{$scroll-button-padding}px;
-  align-self: center;
   z-index: 1337;
   cursor: pointer;
   @include dropShadow();
