@@ -17,7 +17,7 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
   right: calc(#{$padding-left-right-mobile}vw - #{$menu-button-padding});
   top: calc(#{$padding-top-mobile}vw - #{$menu-button-padding});
   padding: $menu-button-padding;
-  z-index: 1337;
+  z-index: 5;
   cursor: pointer;
   @include dropShadow();
 
@@ -43,4 +43,31 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
 .menuButton--image {
   width: inherit;
   height: inherit;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: $color-black;
+}
+
+.menu__item {
+  list-style: none;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: $color-white;
+
+  font-size: getVw($font-size-heading);
 }

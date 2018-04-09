@@ -110,7 +110,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   right: 0;
   margin: auto;
   padding: #{$scroll-button-padding}px;
-  z-index: 1337;
+  z-index: 3;
   cursor: pointer;
   outline: none;
   @include dropShadow();

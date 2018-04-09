@@ -1,3 +1,17 @@
-<button class="menuButton" type="button">
-    <img class="menuButton--image" src="/assets/ui/menu-button.svg" aria-hidden="true">
+<button class="menuButton" type="button" [ngClass]="{'menuButton--close': menuOpen}" (click)="menuOpen = !menuOpen">
+    <img class="menuButton--image" [src]="menuImage" aria-hidden="true">
 </button>
+<menu class="menu">
+  <li class="menu__item">
+    <a class="menu__link" href="#intro">Intro</a>
+  </li>
+  <li class="menu__item">
+    <a class="menu__link" href="#intro">Intro</a>
+  </li>
+  <li class="menu__item">
+    <a class="menu__link" href="#intro">Intro</a>
+  </li>
+  <li class="menu__item">
+    <a class="menu__link" href="#intro">Intro</a>
+  </li>
+</menu>
