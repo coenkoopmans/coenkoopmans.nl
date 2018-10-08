@@ -1,17 +1,16 @@
-<button class="menuButton" type="button" [ngClass]="{'menuButton--close': menuOpen}" (click)="menuOpen = !menuOpen">
-    <img class="menuButton--image" [src]="menuImage" aria-hidden="true">
+<button class="menu-button" type="button" [ngClass]="{'menu-button--close': menuOpen}" (click)="menuOpen = !menuOpen">
+    <img class="menu-button--image" [src]="menuImage" aria-hidden="true">
 </button>
-<menu class="menu">
-  <li class="menu__item">
-    <a class="menu__link" href="#intro">Intro</a>
-  </li>
-  <li class="menu__item">
-    <a class="menu__link" href="#intro">Intro</a>
-  </li>
-  <li class="menu__item">
-    <a class="menu__link" href="#intro">Intro</a>
-  </li>
-  <li class="menu__item">
-    <a class="menu__link" href="#intro">Intro</a>
-  </li>
-</menu>
+<div class="menu-container" [ngClass]="{'menu-container--open': menuOpen}">
+  <menu class="menu">
+    <li class="menu__item">
+      <a class="menu__link" href="#intro">Intro</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" href="#Skills">Skills</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" href="#Over">Over mij</a>
+    </li>
+  </menu>
+</div>

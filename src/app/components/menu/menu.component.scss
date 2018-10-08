@@ -1,6 +1,8 @@
 @import '../../shared/base';
 
-$menu-button-padding: 10px;
+$font-size-menu-item: getVwSizeForScreenWidth(20, 'mobile');
+
+$menu-button-padding: getVwSizeForScreenWidth(10, 'mobile');
 
 $menu-button-width: getVwSizeForScreenWidth(34, 'mobile');
 $menu-button-height: getVwSizeForScreenWidth(24, 'mobile');
@@ -9,56 +11,89 @@ $menu-button-top-mobile: getVwSizeForScreenWidth(45, 'mobile');
 $menu-button-top-tablet: getVwSizeForScreenWidth(70, 'tablet');
 $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
 
-.menuButton {
+.menu-container {
+  display: none;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.menu-container--open {
+  display: block;
+  opacity: 1;
+  position: relative;
+  z-index: 4;
+  animation: fade-in 150ms ease-in-out;
+}
+
+.menu-button {
   width: getVw($menu-button-width);
   height: getVw($menu-button-height);
   box-sizing: content-box;
   position: absolute;
-  right: calc(#{$padding-left-right-mobile}vw - #{$menu-button-padding});
-  top: calc(#{$padding-top-mobile}vw - #{$menu-button-padding});
-  padding: $menu-button-padding;
+  right: #{$padding-left-right-mobile - $menu-button-padding}vw;
+  top: #{$padding-top-mobile - $menu-button-padding}vw;
+  padding: #{$menu-button-padding}vw;
   z-index: 5;
   cursor: pointer;
+  background: $color-black;
+  transition: transform 200ms ease-in-out;
   @include dropShadow();
 
   @include breakpoint('tablet') {
     width: getVw($menu-button-width * $scale-factor-tablet-vw);
     height: getVw($menu-button-height * $scale-factor-tablet-vw);
 
-    right: calc(#{$padding-left-right-tablet}vw - #{$menu-button-padding});
-    top: calc(#{$padding-top-tablet}vw - #{$menu-button-padding});
+    right: #{$padding-left-right-tablet - $menu-button-padding}vw;
+    top: #{$padding-top-tablet - $menu-button-padding}vw;
   }
   @include breakpoint('desktop') {
     width: getVw($menu-button-width * $scale-factor-desktop-vw);
     height: getVw($menu-button-height * $scale-factor-desktop-vw);
 
-    right: calc(#{$padding-left-right-desktop}vw - #{$menu-button-padding});
-    top: calc(#{$menu-button-top-desktop}vw - #{$menu-button-padding});
+    right: #{$padding-left-right-desktop - $menu-button-padding}vw;
+    top: #{$padding-top-desktop - $menu-button-padding}vw;
   }
   @include breakpoint('low-height') {
     zoom: $low-height-scale-factor;
   }
+
+  &:focus {
+    display: none;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1.17);
+  }
 }
 
-.menuButton--image {
+.menu-button--image {
   width: inherit;
   height: inherit;
 }
 
+.menu-button--close {
+  position: fixed;
+}
+
 .menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 4;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background: $color-black;
+  background: rgba($color-black, 0.95);
 }
 
 .menu__item {
@@ -66,8 +101,33 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
 }
 
 .menu__link {
+  display: inline-block;
+  position: relative;
   text-decoration: none;
   color: $color-white;
+  font-size: getVw($font-size-menu-item);
+  line-height: 1.7em;
+  z-index: 2;
+  transition: transform 200ms ease-in-out;
 
-  font-size: getVw($font-size-heading);
+  &:hover {
+    transform: scale(1.1);
+    &:after {
+      content: '';
+      width: 100%;
+      height: getVw(getVwSizeForScreenWidth(2, 'mobile'));
+      display: block;
+      position: absolute;
+      bottom: getVw(getVwSizeForScreenWidth(4, 'mobile'));
+      background: $color-red;
+      z-index: -1;
+    }
+  }
+  &:active {
+    transform: scale(1.17);
+  }
+}
+
+.menu__item:nth-of-type(even) > .menu__link:hover:after {
+  background: $color-blue;
 }

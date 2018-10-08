@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.menuOpen = true;
+    this.menuOpen = false;
   }
 
 }

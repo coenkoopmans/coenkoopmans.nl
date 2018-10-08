@@ -20,14 +20,6 @@ body {
   font-family: $font-regular;
   color: $color-white;
   position: relative;
-
-  padding-bottom: getVw(getVwSizeForScreenWidth(20, 'mobile'));
-  @include breakpoint('tablet') {
-    padding-bottom: getVw(getVwSizeForScreenWidth(20, 'tablet'));
-  }
-  @include breakpoint('desktop') {
-    padding-bottom: getVw(getVwSizeForScreenWidth(40, 'desktop'));
-  }
 }
 
 a:focus, button:focus {

@@ -1,7 +1,22 @@
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  overflow: auto;
+
+  padding-bottom: getVw(getVwSizeForScreenWidth(20, 'mobile'));
+  @include breakpoint('tablet') {
+    padding-bottom: getVw(getVwSizeForScreenWidth(20, 'tablet'));
+  }
+  @include breakpoint('desktop') {
+    padding-bottom: getVw(getVwSizeForScreenWidth(40, 'desktop'));
+  }
+}
+
 // Containers
-
 .container {
-
   padding: getVw($padding-top-mobile - 3.5) getVw($padding-left-right-mobile) 0 getVw($padding-left-right-mobile);
   @include breakpoint('tablet') {
     padding: getVw($padding-top-tablet - 1) getVw($padding-left-right-tablet) 0 getVw($padding-left-right-tablet);
