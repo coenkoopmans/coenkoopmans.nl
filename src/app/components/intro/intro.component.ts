@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent {
-  public scrollDown() {
-    const element: HTMLElement = document.getElementsByClassName('intro')[0] as HTMLElement;
-    window.scroll({top: element.offsetHeight, left: window.scrollX, behavior: 'smooth'});
+  public scrollDown(): void {
+    const introElement: HTMLElement = document.getElementsByClassName('intro')[0] as HTMLElement;
+    const wrapperElement: HTMLElement = document.getElementsByClassName('wrapper')[0] as HTMLElement;
+    wrapperElement.scroll({top: introElement.offsetHeight, left: window.scrollX, behavior: 'smooth'});
   }
 }
