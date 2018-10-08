@@ -107,6 +107,7 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
   color: $color-white;
   font-size: getVw($font-size-menu-item);
   line-height: 1.7em;
+  cursor: pointer;
   z-index: 2;
   transition: transform 200ms ease-in-out;
 

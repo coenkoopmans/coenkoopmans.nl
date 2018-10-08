@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
+export enum Pages {
+  Intro = 'page-intro',
+  Skills = 'page-skills',
+  About = 'page-about'
+}
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  public pages: typeof Pages = Pages;
   public menuImage: string;
 
   private _menuOpen: boolean;
@@ -20,4 +27,14 @@ export class MenuComponent implements OnInit {
     this.menuOpen = false;
   }
 
+  public navigate(page: string): void {
+    this.menuOpen = false;
+    this.doScroll(page);
+  }
+
+  private doScroll(elementId: string): void {
+    const scrollToElement: HTMLElement = document.getElementById(elementId) as HTMLElement;
+    const wrapperElement: HTMLElement = document.getElementsByClassName('wrapper')[0] as HTMLElement;
+    wrapperElement.scroll({top: scrollToElement.offsetTop, left: window.scrollX, behavior: 'smooth'});
+  }
 }
