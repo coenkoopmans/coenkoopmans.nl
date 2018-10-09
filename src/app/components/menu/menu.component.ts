@@ -27,6 +27,10 @@ export class MenuComponent implements OnInit {
     this.menuOpen = false;
   }
 
+  public toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
   public navigate(page: string): void {
     this.menuOpen = false;
     this.doScroll(page);

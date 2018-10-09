@@ -1,6 +1,8 @@
 @import '../../shared/base';
 
-$font-size-menu-item: getVwSizeForScreenWidth(20, 'mobile');
+$font-size-menu-item-mobile: getVwSizeForScreenWidth(40, 'mobile');
+$font-size-menu-item-tablet: getVwSizeForScreenWidth(70, 'tablet');
+$font-size-menu-item-desktop: getVwSizeForScreenWidth(100, 'desktop');
 
 $menu-button-padding: getVwSizeForScreenWidth(10, 'mobile');
 
@@ -10,22 +12,6 @@ $menu-button-height: getVwSizeForScreenWidth(24, 'mobile');
 $menu-button-top-mobile: getVwSizeForScreenWidth(45, 'mobile');
 $menu-button-top-tablet: getVwSizeForScreenWidth(70, 'tablet');
 $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
-
-.menu-container {
-  display: none;
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-.menu-container--open {
-  display: block;
-  opacity: 1;
-  position: relative;
-  z-index: 4;
-  animation: fade-in 200ms ease-in-out;
-}
 
 .menu-button {
   width: getVw($menu-button-width);
@@ -37,7 +23,7 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
   padding: #{$menu-button-padding}vw;
   z-index: 5;
   cursor: pointer;
-  background: $color-black;
+  background: rgba($color-black, 0.7);
   transition: transform 200ms ease-in-out;
   @include dropShadow();
 
@@ -80,20 +66,47 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
   position: fixed;
 }
 
-.menu {
+.menu-container {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.menu-container--open {
+  display: block;
+  opacity: 1;
+  // position: relative;
   z-index: 4;
-  overflow: hidden;
+  animation: fade-in 200ms ease-in-out;
+}
+
+.menu {
+  position: relative;
+  min-height: 100%;
+  z-index: 4;
+  padding: getVw($padding-top-mobile) getVw($padding-left-right-mobile);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: rgba($color-black, 0.95);
+
+  @include breakpoint('tablet') {
+    padding: getVw($padding-top-tablet) getVw($padding-left-right-tablet);
+  }
+  @include breakpoint('desktop') {
+    padding: getVw($padding-top-desktop) getVw($padding-left-right-desktop);
+  }
 }
 
 .menu__item {
@@ -105,7 +118,7 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
   position: relative;
   text-decoration: none;
   color: $color-white;
-  font-size: getVw($font-size-menu-item);
+  font-size: getVw($font-size-menu-item-mobile);
   line-height: 1.7em;
   cursor: pointer;
   z-index: 2;
@@ -126,6 +139,13 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
   }
   &:active {
     transform: scale(1.17);
+  }
+
+  @include breakpoint('tablet') {
+    font-size: getVw($font-size-menu-item-tablet);
+  }
+  @include breakpoint('desktop') {
+    font-size: getVw($font-size-menu-item-desktop);
   }
 }
 
