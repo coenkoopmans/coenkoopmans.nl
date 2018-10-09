@@ -32,8 +32,8 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
   height: getVw($menu-button-height);
   box-sizing: content-box;
   position: absolute;
-  right: #{$padding-left-right-mobile - $menu-button-padding}vw;
-  top: #{$padding-top-mobile - $menu-button-padding}vw;
+  right: getVw($padding-left-right-mobile);
+  top: getVw($padding-top-mobile);
   padding: #{$menu-button-padding}vw;
   z-index: 5;
   cursor: pointer;
@@ -45,15 +45,15 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
     width: getVw($menu-button-width * $scale-factor-tablet-vw);
     height: getVw($menu-button-height * $scale-factor-tablet-vw);
 
-    right: #{$padding-left-right-tablet - $menu-button-padding}vw;
-    top: #{$padding-top-tablet - $menu-button-padding}vw;
+    right: getVw($padding-left-right-tablet);
+    top: getVw($padding-top-tablet);
   }
   @include breakpoint('desktop') {
     width: getVw($menu-button-width * $scale-factor-desktop-vw);
     height: getVw($menu-button-height * $scale-factor-desktop-vw);
 
-    right: #{$padding-left-right-desktop - $menu-button-padding}vw;
-    top: #{$padding-top-desktop - $menu-button-padding}vw;
+    right: getVw($padding-left-right-desktop);
+    top: getVw($padding-top-desktop);
   }
   @include breakpoint('low-height') {
     zoom: $low-height-scale-factor;
