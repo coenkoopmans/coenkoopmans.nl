@@ -5,6 +5,7 @@ html, body {
 .wrapper {
   height: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 
   padding-bottom: getVw(getVwSizeForScreenWidth(20, 'mobile'));
   @include breakpoint('tablet') {
