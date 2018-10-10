@@ -25,7 +25,6 @@ $menu-button-top-desktop: getVwSizeForScreenWidth(70, 'desktop');
   cursor: pointer;
   background: rgba($color-black, 0.7);
   transition: transform 200ms ease-in-out;
-  @include dropShadow();
 
   @include breakpoint('tablet') {
     width: getVw($menu-button-width * $scale-factor-tablet-vw);
