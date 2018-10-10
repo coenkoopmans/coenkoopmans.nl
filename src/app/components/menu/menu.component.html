@@ -4,13 +4,13 @@
 <div class="menu-container" [ngClass]="{'menu-container--open': menuOpen}">
   <menu class="menu">
     <li class="menu__item">
-      <a class="menu__link" (click)="navigate(pages.Intro)">Intro</a>
+      <a class="menu__link" (click)="navigate(pages.Intro, $event)">Intro</a>
     </li>
     <li class="menu__item">
-      <a class="menu__link" (click)="navigate(pages.Skills)">Skills</a>
+      <a class="menu__link" (click)="navigate(pages.Skills, $event)">Skills</a>
     </li>
     <li class="menu__item">
-      <a class="menu__link" (click)="navigate(pages.About)">Over mij</a>
+      <a class="menu__link" (click)="navigate(pages.About, $event)">Over mij</a>
     </li>
   </menu>
 </div>
