@@ -4,7 +4,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-size: getVw($font-size-regular);
-  margin-bottom: 1em;
+  margin-bottom: getVw(getVwSizeForScreenWidth(10, 'mobile'));
   line-height: 1.75em;
   text-align: justify;
 
@@ -18,10 +18,18 @@ p {
 p > em {
   color: $color-blue;
   font-weight: bold;
+
+  & > a {
+    color: $color-blue;
+  }
 }
 p > strong {
   color: $color-red;
   font-weight: bold;
+
+  & > a {
+    color: $color-red;
+  }
 }
 
 em {

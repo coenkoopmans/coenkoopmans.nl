@@ -1,0 +1,29 @@
+@import '../../shared/base';
+
+.button-medium {
+
+  @include breakpoint('desktop') {
+    max-width: 40vw;
+  }
+}
+
+.button-medium__label {
+  align-self: center;
+  padding-left: getVw(getVwSizeForScreenWidth(5, 'mobile'));
+}
+
+.button-medium__logo {
+  width: getVw(getVwSizeForScreenWidth(50, 'mobile'));
+  height: getVw(getVwSizeForScreenWidth(50, 'mobile'));
+
+  margin: getVw(getVwSizeForScreenWidth(-3, 'mobile'));
+
+  @include breakpoint('tablet') {
+    width: getVw(getVwSizeForScreenWidth(50, 'tablet'));
+    height: getVw(getVwSizeForScreenWidth(50, 'tablet'));
+  }
+  @include breakpoint('desktop') {
+    width: getVw(getVwSizeForScreenWidth(50, 'desktop'));
+    height: getVw(getVwSizeForScreenWidth(50, 'desktop'));
+  }
+}
