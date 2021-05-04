@@ -1,6 +1,6 @@
 @import '../../shared/base';
 
-$font-size-skills: getVwSizeForScreenWidth(12, 'mobile');
+$font-size-skills: getVwSizeForScreenWidth(10, 'mobile');
 
 // Hexagons
 
@@ -78,7 +78,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   .skills__item:nth-of-type(3n+3) { // Third of three (separate, on new line)
     margin-left: getVw(
       (
-        ($hexagon-width * 2 + $hexagon-margin) - 
+        ($hexagon-width * 2 + $hexagon-margin) -
         ($hexagon-width)
       ) / 2
     );
@@ -99,7 +99,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   .skills__item:nth-of-type(5n+4) {
     margin-left: getVw(
       (
-        ($hexagon-width-tablet * 3 + $hexagon-margin-tablet * 2) - 
+        ($hexagon-width-tablet * 3 + $hexagon-margin-tablet * 2) -
         ($hexagon-width-tablet * 2 + $hexagon-margin-tablet)
       ) / 2
     );
@@ -123,7 +123,7 @@ $hexagon-margin-desktop: $hexagon-margin * $scale-factor-desktop-vw;
   .skills__item:nth-of-type(7n+5) {
     margin-left: getVw(
       (
-        ($hexagon-width-desktop * 4 + $hexagon-margin-desktop * 3) - 
+        ($hexagon-width-desktop * 4 + $hexagon-margin-desktop * 3) -
         ($hexagon-width-desktop * 3 + $hexagon-margin-desktop * 2)
       ) / 2
     );

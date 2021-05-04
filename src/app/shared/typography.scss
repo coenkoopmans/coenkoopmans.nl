@@ -4,15 +4,17 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-size: getVw($font-size-regular);
-  margin-bottom: getVw(getVwSizeForScreenWidth(10, 'mobile'));
+  margin-bottom: getVw(getVwSizeForScreenWidth(25, 'mobile'));
   line-height: 1.75em;
   text-align: justify;
 
   @include breakpoint('tablet') {
     font-size: getVw($font-size-regular * $scale-factor-tablet-vw);
+    margin-bottom: getVw(getVwSizeForScreenWidth(25, 'tablet'));
   }
   @include breakpoint('desktop') {
     font-size: getVw($font-size-regular * $scale-factor-desktop-vw);
+    margin-bottom: getVw(getVwSizeForScreenWidth(15, 'desktop'));
   }
 }
 p > em {

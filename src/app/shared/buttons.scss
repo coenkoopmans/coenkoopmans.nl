@@ -1,7 +1,7 @@
 .button {
   display: block;
-  padding: getVw(getVwSizeForScreenWidth(10, 'mobile'));
-  margin: getVw(getVwSizeForScreenWidth(10, 'mobile')) 0;
+  padding: getVw(getVwSizeForScreenWidth(5, 'mobile'));
+  margin: getVw(getVwSizeForScreenWidth(15, 'mobile')) 0;
 
   text-decoration: none;
 }
