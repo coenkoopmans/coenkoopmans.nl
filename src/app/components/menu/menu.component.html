@@ -1,4 +1,4 @@
-<button class="menu-button" type="button" [ngClass]="{'menu-button--close': menuOpen}" (click)="toggleMenu()">
+<button class="menu-button" type="button" [ngClass]="{'menu-button--close': menuOpen}" (click)="toggleMenu()" (touchend)="toggleMenu()">
     <img class="menu-button--image" [src]="menuImage" aria-hidden="true">
 </button>
 <div class="menu-container" [ngClass]="{'menu-container--open': menuOpen}">
