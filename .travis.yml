@@ -17,7 +17,7 @@ cache:
     - $(npm config get prefix)/bin/ng
 before_install:
   - export CHROME_BIN=/usr/bin/google-chrome
-  - export DISPLAY=:99.0
+  - export DISPLAY=:90.0
   - npm install @angular/cli -g
 install:
   - npm install
