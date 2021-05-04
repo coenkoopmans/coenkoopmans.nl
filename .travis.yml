@@ -7,7 +7,9 @@ language: node_js
 node_js:
   - "10.16.3"
 addons:
-  chrome: stable
+  apt:
+    sources:
+    - google-chrome
 branches:
   only:
   - develop
@@ -17,7 +19,7 @@ cache:
     - $(npm config get prefix)/bin/ng
 before_install:
   - export CHROME_BIN=/usr/bin/google-chrome
-  - export DISPLAY=:90.0
+  - export DISPLAY=:99.0
   - npm install @angular/cli -g
 install:
   - npm install
