@@ -25,7 +25,6 @@ install:
   - npm install
 script:
   - ng test --watch false
-  - ng e2e
   - npm run build
 after_success:
   - 'test $TRAVIS_PULL_REQUEST = false && bash ./deploy.sh'
