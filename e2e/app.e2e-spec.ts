@@ -15,7 +15,7 @@ describe('App', () => {
 
   it('should display the tag line', () =>
     expect(page.getTagLine())
-      .toEqual('Front-end developer met passie voor schone code.'));
+      .toEqual('Lead developer met passie voor strakke websites.'));
 
   it('should display the menu button', () => expect(page.getMenuButton()).toBeTruthy());
 
@@ -25,8 +25,8 @@ describe('App', () => {
     expect(page.getSkillsContainer()).toBeTruthy();
     expect(page.getSkills()).toBeTruthy();
     page.getSkills().then((items) => {
-      expect(items.length).toBe(14); // including filler
-      expect(items[0].getText()).toBe('ESNext / Javascript');
+      expect(items.length).toBe(18); // including filler
+      expect(items[0].getText()).toBe('Leiderschap');
     });
   });
 
