@@ -7,7 +7,7 @@ language: node_js
 node_js:
   - "10.16.3"
 addons:
-  chrome: 90
+  chrome: stable
 branches:
   only:
   - develop
